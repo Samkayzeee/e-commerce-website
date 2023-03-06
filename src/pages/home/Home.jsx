@@ -1,10 +1,15 @@
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
+import './Home.css';
 
 const HomePage = () => {
     return ( 
         <>
         <DefaultLayout>
-            This is the Home Page
+            <div className="homepage">
+                <div className="section1">
+                    
+                </div>
+            </div>
         </DefaultLayout>
         </>
      );
