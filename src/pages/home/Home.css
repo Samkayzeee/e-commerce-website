@@ -1,4 +1,15 @@
-/* .homepage .section1{
+.homepage .section1{
     background: url('../../assets/shopping-carts-facing-each-other.jpg');
-    width: 100%;
-} */
+    background-position: center;
+    background-size: cover;
+    padding: 20% 4%;
+}
+.homepage .section1 h1{
+    font-size: 55px;
+    font-weight: 900;
+}
+.homepage .section1 h4{
+    font-size: 35px;
+    font-weight: 700;
+    margin: 1% 0;
+}
