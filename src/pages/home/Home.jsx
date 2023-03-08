@@ -1,3 +1,4 @@
+import Products from "../../components/products/Products";
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
 import './Home.css';
 
@@ -10,6 +11,9 @@ const HomePage = () => {
                     <h1>NEW SEASONS ARRIVALS</h1>
                     <h4>CHECK OUT ALL THE TRENDS</h4>
                 </div>
+
+                <Products />
+                
             </div>
         </DefaultLayout>
         </>

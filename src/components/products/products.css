@@ -1,0 +1,14 @@
+.products-container{
+    padding: 4%;
+}
+.products-container h1{
+    font-weight: 800;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px lightgray solid;
+}
+.products-container .error{
+    color: red;
+    padding: 0;
+    border-bottom: none;
+}
