@@ -1,10 +1,11 @@
 import './Products.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
     const [data, setData] = useState([]);
-    const [filter, setFilter] = useState(data);
+    const [filter, setFilter] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -18,6 +19,7 @@ const Products = () => {
                 }
                     const data = response.data;
                     setData(data);
+                    setFilter(data);
             } catch (error) {
                 setError(error.message);
                 if(error){
@@ -33,18 +35,56 @@ const Products = () => {
     const Loading = () => {
         return (
             <>
-                Loading...
+                <div className="d-flex justify-content-center">
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>
             </>
         )
     }
 
 
-    const showProducts = () => {
+    const ShowProducts = () => {
         return(
             <>
+            {
+                error ? <h1 className="error"> { error } Can't Fetch Products</h1> 
+                : 
                 <div className="product-container">
+                <h1> Latest Products </h1>
+
+                    <div className="filter-buttons">
+                        <button className='btn btn-outline-dark'>All</button>
+                        <button className='btn btn-outline-dark'>Men's Products</button>
+                        <button className='btn btn-outline-dark'>Women's Products</button>
+                        <button className='btn btn-outline-dark'>Electronics</button>
+                        <button className='btn btn-outline-dark'>Jewelries</button>
+                    </div>
+
+                    <div className="main_products-container">
+                        {
+                            filter.map(products => {
+                                return(
+                                        <div className="main-product" key={products.id}>
+                                            <div className="products-img">
+                                                <img src={products.image} alt={products.title} />
+                                            </div>
+
+                                            <div className="details">
+                                                <h5 className='products-title'>{products.title.substring(0, 12)}...</h5>
+                                                <p className="products-price">$ {products.price}</p>
+                                            </div>
+
+                                            <Link to={'#'} className="btn btn-outline-dark">Buy Now</Link>
+                                        </div>
+                                )
+                            })
+                        }
+                    </div>
                     
                 </div>
+            }
             </>
         )
     }
@@ -53,9 +93,9 @@ const Products = () => {
     return ( 
         <>
             <div className="products-container">
-                    {
-                        !error ? <h1 className=''>Latest Products</h1> : <h1 className='error'> { error } </h1>
-                    }
+                {
+                    loading ?  <Loading /> : <ShowProducts />
+                } 
             </div>
         </>
      );
