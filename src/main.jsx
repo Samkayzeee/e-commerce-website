@@ -11,13 +11,17 @@ const ContactPage = React.lazy(() => import('./pages/contact/Contact'));
 const AboutPage = React.lazy(() => import('./pages/about/About'));
 const SignupPage = React.lazy(() => import('./pages/account/signup/Signup'));
 const LoginPage = React.lazy(() => import('./pages/account/login/Login'));
+const ProductsPage = React.lazy(() => import('./pages/products/Products'));
+const ViewProducts = React.lazy(() => import('./pages/viewproduct/ViewProducts'));
 
 const router = createBrowserRouter([
   {path: '/', element: <HomePage />},
   {path: '/contact', element: <ContactPage />},
   {path: '/about', element: <AboutPage />},
   {path: '/signup', element: <SignupPage />},
-  {path: '/login', element: <LoginPage />}
+  {path: '/login', element: <LoginPage />},
+  {path: '/products', element: <ProductsPage />},
+  {path: '/products/:id', element: <ViewProducts />}
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -31,6 +31,9 @@
 .navbar .container-fluid .collapse .buttons ul li{
     margin-left: 15px;
 }
+.navbar .container-fluid .collapse ul li a:focus{
+    color: black;
+}
 .cart-li{
     position: relative;
 }

@@ -1,9 +1,9 @@
-import './Products.css';
+import './Product.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const Products = () => {
+const Product = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -44,6 +44,10 @@ const Products = () => {
         )
     }
 
+    const filterProduct = (filter) => {
+        const updateProducts = data.filter((filtered) => filtered.category === filter);
+        setFilter(updateProducts);
+    }
 
     const ShowProducts = () => {
         return(
@@ -55,11 +59,11 @@ const Products = () => {
                 <h1> Latest Products </h1>
 
                     <div className="filter-buttons">
-                        <button className='btn btn-outline-dark'>All</button>
-                        <button className='btn btn-outline-dark'>Men's Products</button>
-                        <button className='btn btn-outline-dark'>Women's Products</button>
-                        <button className='btn btn-outline-dark'>Electronics</button>
-                        <button className='btn btn-outline-dark'>Jewelries</button>
+                        <button className='btn btn-outline-dark' onClick={() => setFilter(data)}>All</button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("men's clothing")}>Men's Products</button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("women's clothing")}>Women's Products</button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("electronics")}>Electronics</button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("jewelery")}>Jewelries</button>
                     </div>
 
                     <div className="main_products-container">
@@ -76,7 +80,7 @@ const Products = () => {
                                                 <p className="products-price">$ {products.price}</p>
                                             </div>
 
-                                            <Link to={'#'} className="btn btn-outline-dark">Buy Now</Link>
+                                            <Link to={`/products/${products.id}`} className="btn btn-outline-dark">Buy Now</Link>
                                         </div>
                                 )
                             })
@@ -101,4 +105,4 @@ const Products = () => {
      );
 }
  
-export default Products;
+export default Product;

@@ -1,4 +1,4 @@
-import Products from "../../components/products/Products";
+import Products from "../../components/products/Product";
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
 import './Home.css';
 
@@ -13,7 +13,7 @@ const HomePage = () => {
                 </div>
 
                 <Products />
-                
+
             </div>
         </DefaultLayout>
         </>
