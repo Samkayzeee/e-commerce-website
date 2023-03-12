@@ -7,7 +7,7 @@ const handleCart = (state = cart, action) => {
             // check if product alreadt exist
             const exist = state.find((x) => {x.id === product.id})
             if (exist) {
-                // increase the qauntity
+                // increase the quantity
                 return state.map(x => {
                     x.id === product.id ? {...x, qty: x.qty + 1} : x
                 });
@@ -35,6 +35,7 @@ const handleCart = (state = cart, action) => {
             }
     
         default:
+            return state;
             break;
     }
 }

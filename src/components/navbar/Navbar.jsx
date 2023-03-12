@@ -1,31 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     return ( 
         <>
-            {/* <nav className="navbar">
-                <div className="logo">
-                    <Link to={'/'}>SAMKAYZEE</Link>
-                </div>
-
-                <div className="links">
-                    <ul>
-                        <li> <Link to={'/home'}>Home</Link> </li>
-                        <li> <Link to={'/products'}>Products</Link> </li>
-                        <li> <Link to={'/about'}>About</Link> </li>
-                        <li> <Link to={'/contact'}>Contact</Link> </li>
-                    </ul>
-                </div>
-
-                <div className="account">
-                    <ul>
-                        <li> <Link to={'/login'}>Login</Link> </li>
-                        <li> <Link to={'/signup'}>Register</Link> </li>
-                        <li> <Link to={'/cart'}>Cart</Link> </li>
-                    </ul>
-                </div>
-            </nav> */}
 
 <nav className="navbar navbar-expand-lg bg-body-tertiary py-3 shadow-sm">
   <div className="container-fluid">
@@ -61,7 +40,7 @@ const Navbar = () => {
 
           <li className='nav-item'>
             <Link to={'/cart'} className="btn btn-outline-dark cart-li"><i className="fa-solid fa-cart-shopping"></i>
-             {/* <span>2</span> */}
+             <span>{2}</span>
              </Link>
           </li>
         </ul>

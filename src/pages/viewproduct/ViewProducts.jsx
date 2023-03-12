@@ -3,12 +3,19 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import DefaultLayout from './../../layouts/DefaultLayouts/DefaultLayout';
 import './ViewProducts.css';
-// import Skeleton from "react-loading-skeleton";
+import { useDispatch } from 'react-redux';
+import { addToCart } from "../../redux/action";
 
 const ViewProductsPage = () => {
     const { id } = useParams();
     const [product, setproduct] = useState({});
     const [loading, setLoading] = useState(false);
+
+    const dispatch = useDispatch()
+    const addProduct = (product) => {
+        dispatch(addToCart(product));
+    }
+
 
     useEffect(() => {
         const getProduct = async () => {
@@ -19,7 +26,7 @@ const ViewProductsPage = () => {
             setLoading(false);
         }
         getProduct();
-    },[])
+    },[]);
 
     const Loading = () => {
         return(
@@ -50,7 +57,7 @@ const ViewProductsPage = () => {
                         <p className="desc">
                             {product.description}
                         </p>
-                        <button className="btn btn-dark">Add to Cart</button>
+                        <button className="btn btn-dark" onClick={() =>addProduct(product)}>Add to Cart</button>
                         <Link className="btn btn-outline-dark ms-2">Go to Cart</Link>
                     </div>
                 </div>
