@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     return ( 
@@ -40,7 +39,7 @@ const Navbar = () => {
 
           <li className='nav-item'>
             <Link to={'/cart'} className="btn btn-outline-dark cart-li"><i className="fa-solid fa-cart-shopping"></i>
-             <span>{2}</span>
+             {/* <span>{2}</span> */}
              </Link>
           </li>
         </ul>

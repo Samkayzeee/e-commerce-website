@@ -21,7 +21,6 @@ const handleCart = (state = cart, action) => {
                     }
                 ]
             }
-            break;
 
             case "DELFROMCART" : 
             const exist1 = state.find(x => x.id === product.id);
@@ -36,7 +35,6 @@ const handleCart = (state = cart, action) => {
     
         default:
             return state;
-            break;
     }
 }
 
