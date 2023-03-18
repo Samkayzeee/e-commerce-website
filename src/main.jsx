@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 
 
 const HomePage = React.lazy(() => import('./pages/home/Home'));
