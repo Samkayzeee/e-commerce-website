@@ -5,6 +5,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { Provider } from 'react-redux';
+import Loading from './components/loading/Loading';
 
 
 const HomePage = React.lazy(() => import('./pages/home/Home'));
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense>
+    <Suspense fallback={<Loading />}>
       {/* <Provider > */}
         <RouterProvider router={router}/>
       {/* </Provider> */}

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import DefaultLayout from './../../layouts/DefaultLayouts/DefaultLayout';
 import './ViewProducts.css';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -10,10 +11,16 @@ const ViewProductsPage = () => {
     const { id } = useParams();
     const [product, setproduct] = useState({});
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    let token = localStorage.getItem("token");
+
 
 
     // fetching single product
     useEffect(() => {
+        if (!token) {
+            navigate('/login');
+        }
         const getProduct = async () => {
             setLoading(true);
             const response = await axios.get(`https://fakestoreapi.com/products/${id}`);

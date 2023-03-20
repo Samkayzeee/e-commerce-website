@@ -36,13 +36,14 @@
     border: none;
     border-radius: 8px;
     width: 100%;
+    font-size: 16px;
 }
 .signup-container .signup-form input:focus{
     outline: none;
 }
 .signup-container .signup-form input::placeholder{
     color: white;
-    font-weight: 200;
+    font-size: 15px;
 }
 .signup-container .signup-form button{
     border: none;
@@ -67,6 +68,17 @@
 }
 .signup-container .signup-form .already a:hover{
     text-shadow: 0px 2px 5px gray;
+}
+.signup-container .signup-form .success{
+    color: green;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+@media screen and (max-width:1100px) {
+    .signup-container .signup-form{
+        width: 35%;
+    }
 }
 
 @media screen and (max-width:950px) {
