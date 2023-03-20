@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 
@@ -15,21 +14,26 @@ const SignupPage = React.lazy(() => import('./pages/account/signup/Signup'));
 const LoginPage = React.lazy(() => import('./pages/account/login/Login'));
 const ProductsPage = React.lazy(() => import('./pages/products/Products'));
 const ViewProducts = React.lazy(() => import('./pages/viewproduct/ViewProducts'));
+const ErrorPage = React.lazy(() => import('./pages/error/404'));
+const Cart = React.lazy(() => import('./pages/carts/Carts'));
 
 const router = createBrowserRouter([
-  {path: '/', element: <HomePage />},
+  {path: '/', element: <HomePage />, errorElement: <ErrorPage />},
   {path: '/contact', element: <ContactPage />},
   {path: '/about', element: <AboutPage />},
   {path: '/signup', element: <SignupPage />},
   {path: '/login', element: <LoginPage />},
   {path: '/products', element: <ProductsPage />},
-  {path: '/products/:id', element: <ViewProducts />}
+  {path: '/products/:id', element: <ViewProducts />},
+  {path: '/cart', element: <Cart />}
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Suspense>
+      {/* <Provider > */}
         <RouterProvider router={router}/>
+      {/* </Provider> */}
     </Suspense>
   </React.StrictMode>
 )

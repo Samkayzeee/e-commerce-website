@@ -4,12 +4,15 @@ import axios from "axios";
 import DefaultLayout from './../../layouts/DefaultLayouts/DefaultLayout';
 import './ViewProducts.css';
 
+
+
 const ViewProductsPage = () => {
     const { id } = useParams();
     const [product, setproduct] = useState({});
     const [loading, setLoading] = useState(false);
 
 
+    // fetching single product
     useEffect(() => {
         const getProduct = async () => {
             setLoading(true);
@@ -21,6 +24,8 @@ const ViewProductsPage = () => {
         getProduct();
     },[]);
 
+
+    // loading
     const Loading = () => {
         return(
             <>
@@ -34,6 +39,7 @@ const ViewProductsPage = () => {
         )
     }
 
+    // showing products
     const ShowProduct = () => {
         return(
             <>
@@ -51,7 +57,7 @@ const ViewProductsPage = () => {
                             {product.description}
                         </p>
                         <button className="btn btn-dark">Add to Cart</button>
-                        <Link className="btn btn-outline-dark ms-2">Go to Cart</Link>
+                        <Link className="btn btn-outline-dark ms-2" to={'/cart'}>Go to Cart</Link>
                     </div>
                 </div>
             </>
