@@ -9,6 +9,9 @@
 .navbar a{
     font-size: 17px;
 }
+.navbar .container-fluid .navbar-brand{
+    font-weight: 800;
+}
 .navbar .container-fluid .collapse .buttons ul li{
     margin-left: 15px;
 }
