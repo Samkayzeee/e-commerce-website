@@ -10,9 +10,9 @@ const Footer = () => {
                 </div>
 
                 <div className="icons">
-                        <li> <Link to={'https://github.com/Samkayzeee'}><i class="fa-brands fa-github"></i></Link> </li>
-                        <li> <Link to={'https://twitter.com/Samkayzee1'}><i class="fa-brands fa-twitter"></i></Link> </li>
-                        <li> <Link to={'https://www.linkedin.com/in/lasisi-abdulsamad/'}><i class="fa-brands fa-linkedin"></i></Link> </li>
+                        <li> <Link to={'https://github.com/Samkayzeee'}><i className="fa-brands fa-github"></i></Link> </li>
+                        <li> <Link to={'https://twitter.com/Samkayzee1'}><i className="fa-brands fa-twitter"></i></Link> </li>
+                        <li> <Link to={'https://www.linkedin.com/in/lasisi-abdulsamad/'}><i className="fa-brands fa-linkedin"></i></Link> </li>
                 </div>
             </footer>
         </>

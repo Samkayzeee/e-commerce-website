@@ -1,0 +1,93 @@
+.contact-container{
+    padding: 2% 4%;
+}
+.contact-container h1{
+    text-align: center;
+    font-weight: 800;
+    font-size: 35px;
+    margin: 3% 0;
+}
+.contact-container h2{
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+}
+.contact-form{
+    padding: 2% 4%;
+    width: 70%;
+    margin: 3% auto;
+    background-color: rgb(248, 248, 248);
+}
+.contact-form input{
+    display: block;
+    margin: 3% 0;
+    width: 100%;
+    padding: 3% 2%;
+    border: solid 1.5px lightgray;
+    border-radius: 7px;
+    transition: all .4s;
+}
+.contact-form textarea{
+    width: 100%;
+    padding: 3% 2%;
+    border: solid 1.5px lightgray;
+    border-radius: 7px;
+    transition: all .4s;
+    margin-bottom: 3%;
+    resize: none;
+}
+.contact-form input:focus, .contact-form textarea:focus{
+    transition: all .4s;
+    outline: none;
+}
+
+.contact-form button{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: block;
+    margin: 2% 0;
+    outline: none;
+    border-radius: 6px;
+    z-index: 0;
+    background-color: black;
+    opacity: 0.9;
+    overflow: hidden;
+    border: none;
+    color: white;
+    padding: 2% 5%;
+    margin: 0 auto;
+  }
+  .contact-form button:hover {
+    color: white;
+  }
+  .contact-form button:hover:after {
+    width: 100%;
+  }
+  .contact-form button:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(100, 195, 100);
+  }
+  .contact-form p{
+    color: rgb(100, 195, 100);
+    font-weight: 700;
+  }
+  .contact-container .contact-information h2{
+    margin: 3% 0;
+  }
+  .contact-container .contact-information ol li{
+    margin: 2% 0;
+  }
+  .contact-container .contact-information ol li span{
+    font-weight: 800;
+  }

@@ -1,0 +1,12 @@
+.about{
+    padding: 3% 4%;
+}
+.about h2{
+    font-weight: 800;
+    text-align: center;
+    margin: 2% 0;
+}
+.about p{
+    line-height: 25px;
+    margin: 2% 0;
+}
