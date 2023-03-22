@@ -1,8 +1,19 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 const Navbar = () => {
+
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+  const cartLength = useSelector(state => state.cart.value)
+
+  const Logout = () => {
+    localStorage.removeItem("token");
+    navigate('/');
+  }
     return ( 
         <>
 
@@ -31,16 +42,20 @@ const Navbar = () => {
       <div className="buttons">
         <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
           <li className='nav-item'>
-            <Link to={'/login'} className="btn btn-outline-dark">Login <i className="fa-solid fa-right-to-bracket"></i></Link>
+            {
+              token? <button onClick={Logout} className='btn btn-outline-dark'>Log Out</button> : <Link to={'/login'} className="btn btn-outline-dark">Login <i className="fa-solid fa-right-to-bracket"></i></Link>
+            }
           </li>
 
           <li className='nav-item'>
-            <Link to={'/signup'} className="btn btn-outline-dark">Register <i className="fa-solid fa-user-plus"></i></Link>
+            {
+              token? null : <Link to={'/signup'} className="btn btn-outline-dark">Register <i className="fa-solid fa-user-plus"></i></Link>
+            }
           </li>
 
           <li className='nav-item'>
             <Link to={'/cart'} className="btn btn-outline-dark cart-li"><i className="fa-solid fa-cart-shopping"></i>
-             <span>{2}</span>
+             <span>{cartLength.length}</span>
              </Link>
           </li>
         </ul>

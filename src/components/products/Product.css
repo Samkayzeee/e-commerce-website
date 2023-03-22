@@ -56,3 +56,25 @@
         grid-template-columns: auto auto auto;
     }
 }
+@media screen and (max-width:980px) {
+    .product-container .main_products-container{
+        grid-template-columns: auto auto;
+    }
+    .product-container .filter-buttons{
+        /* margin: 0; */
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+    }
+    .product-container .filter-buttons button{
+        font-size: 14px;
+        width: fit-content;
+        margin: 5px 2%;
+    }
+}
+@media screen and (max-width:700px) {
+    .product-container .main_products-container{
+        display: flex;
+        flex-direction: column;
+    }
+}

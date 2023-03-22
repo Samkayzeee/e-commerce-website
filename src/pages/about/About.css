@@ -10,3 +10,26 @@
     line-height: 25px;
     margin: 2% 0;
 }
+/* @media only screen and (max-width: 1000px) and (max-height: 1400px) {
+    .about{
+        padding-bottom: 50%;
+    }
+    .about p{
+        margin: 7%  0;
+    }
+  } */
+@media screen and (max-width: 900px){
+    .about{
+        padding: 3% 4%;
+    }
+    .about p{
+        line-height: 25px;
+        margin: 2% 0;
+    }
+}
+@media screen and (max-width:300px) {
+    .about p{
+        font-size: 13px;
+        text-align: center;
+    }
+}

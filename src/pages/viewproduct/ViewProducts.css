@@ -44,3 +44,13 @@
     line-height: 24px;
     opacity: 0.9;
 }
+@media screen and (max-width:850px) {
+    .main-viewproduct{
+        flex-direction: column;
+        /* border: solid; */
+    }
+    .main-viewproduct .details{
+        width: 100%;
+        padding: 3%;
+    }
+}

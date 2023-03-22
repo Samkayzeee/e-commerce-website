@@ -27,3 +27,30 @@
 .footer .icons li a:hover{
     opacity: 0.5;
 }
+@media screen and (max-width:850px) {
+    .footer{
+        flex-direction: column;
+    }
+    .footer .first{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .footer{
+        flex-direction: column;
+    }
+    .footer .first{
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .footer .icons li a{
+        font-size: 22px;
+    }
+}
+@media screen and (max-width:300px) {
+    .footer .first{
+        font-size: 10px;
+    }
+}

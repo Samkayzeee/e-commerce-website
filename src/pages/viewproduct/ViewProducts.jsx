@@ -4,6 +4,8 @@ import axios from "axios";
 import DefaultLayout from './../../layouts/DefaultLayouts/DefaultLayout';
 import './ViewProducts.css';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { handleCart } from "../../redux/handleCart";
 
 
 
@@ -13,8 +15,7 @@ const ViewProductsPage = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     let token = localStorage.getItem("token");
-
-
+    const dispatch = useDispatch();
 
     // fetching single product
     useEffect(() => {
@@ -63,7 +64,7 @@ const ViewProductsPage = () => {
                         <p className="desc">
                             {product.description}
                         </p>
-                        <button className="btn btn-dark">Add to Cart</button>
+                        <button className="btn btn-dark" onClick={() => dispatch(handleCart.addCart(product))}>Add to Cart</button>
                         <Link className="btn btn-outline-dark ms-2" to={'/cart'}>Go to Cart</Link>
                     </div>
                 </div>

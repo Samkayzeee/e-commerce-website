@@ -13,3 +13,17 @@
     font-weight: 700;
     margin: 1% 0;
 }
+@media screen and (max-width:800px) {
+    .homepage .section1{
+        padding: 30% 4%;
+    }
+    .homepage .section1 h1{
+        font-size: 31px;
+        font-weight: 900;
+        margin: 3% 0;
+    }
+    .homepage .section1 h4{
+        font-size: 25px;
+        margin: 3% 0;
+    }
+}
