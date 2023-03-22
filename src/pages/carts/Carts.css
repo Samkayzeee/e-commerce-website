@@ -1,0 +1,11 @@
+.cart{
+    padding: 4%;
+}
+.empty-cart{
+    text-align: center;
+    padding: 20% 0;
+}
+.empty-cart h1{
+    margin: 2% 0;
+    font-weight: 800;
+}

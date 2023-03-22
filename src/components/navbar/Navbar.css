@@ -12,6 +12,23 @@
 .navbar .container-fluid .navbar-brand{
     font-weight: 800;
 }
+.navbar-toggler{
+    position: relative;
+}
+.show-cart{
+    position: absolute;
+    border: none;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 3px;
+    color: white;
+    font-weight: 800;
+    top: 0;
+}
 .navbar .container-fluid .collapse .buttons ul li{
     margin-left: 15px;
 }

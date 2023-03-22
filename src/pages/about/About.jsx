@@ -5,6 +5,10 @@ const AboutPage = () => {
     return ( 
             <DefaultLayout>
                <div className="about">
+               <div className="section1">
+
+               </div>
+               
                <h2>About Us</h2>
                     <p>Welcome to Samkayzee Products, where we're passionate about providing our customers with the best shopping experience possible. Our company was founded on the principle of putting customers first, and we strive to maintain that philosophy every day.</p>
                     <p>Our mission is simple: to offer high-quality products at affordable prices while providing top-notch customer service. We believe that everyone deserves to have access to the latest trends and styles, which is why we're always adding new items to our inventory.</p>

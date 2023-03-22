@@ -1,6 +1,12 @@
 .about{
     padding: 3% 4%;
 }
+.about .section1{
+    background: url('../../assets//e_commerce_about_page.jpg');
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+}
 .about h2{
     font-weight: 800;
     text-align: center;
@@ -10,14 +16,6 @@
     line-height: 25px;
     margin: 2% 0;
 }
-/* @media only screen and (max-width: 1000px) and (max-height: 1400px) {
-    .about{
-        padding-bottom: 50%;
-    }
-    .about p{
-        margin: 7%  0;
-    }
-  } */
 @media screen and (max-width: 900px){
     .about{
         padding: 3% 4%;
