@@ -46,6 +46,9 @@ const ViewProductsPage = () => {
             </>
         )
     }
+    const addToCart = () => {
+        dispatch(handleCart.addCart(product));
+    }
 
     // showing products
     const ShowProduct = () => {
@@ -64,7 +67,7 @@ const ViewProductsPage = () => {
                         <p className="desc">
                             {product.description}
                         </p>
-                        <button className="btn btn-dark" onClick={() => dispatch(handleCart.addCart(product))}>Add to Cart</button>
+                        <button className="btn btn-dark" onClick={addToCart}>Add to Cart</button>
                         <Link className="btn btn-outline-dark ms-2" to={'/cart'}>Go to Cart</Link>
                     </div>
                 </div>
