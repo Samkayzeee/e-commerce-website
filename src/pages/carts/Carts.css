@@ -9,3 +9,53 @@
     margin: 2% 0;
     font-weight: 800;
 }
+.cart-items .item{
+    margin: 2% 0;
+    border: solid;
+    padding: 2%;
+}
+.cart-items .item .item-img{
+    width: 170px;
+    height: 170px;
+    border: solid 1px lightgray;
+    border-radius: 8px;
+    padding: 5px;
+}
+.cart-items .item .item-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.cart-items .item .details h2{
+    font-size: 16px;
+    font-weight: 800;
+}
+.cart-items .item .details .qty{
+    background-color: black;
+    width: fit-content;
+    color: white;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: none;
+}
+.cart-items .item .details .qty span{
+    padding: 8px 16px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all .3s;
+    cursor: pointer;
+    border: none;
+}
+.cart-items .item .details .qty span:first-child{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.cart-items .item .details .qty span:last-child{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.cart-items .item .details .qty span:first-child:hover, .cart-items .item .details .qty span:last-child:hover{
+    background-color: gray;
+}

@@ -30,9 +30,31 @@ const Cart = () => {
 
     const CartItems = () => {
       return(
-         <>
-            Carts are available
-         </>
+            <div className="cart-items">
+               {
+                  cart.map((item) => {
+                     return(
+                        <div className="item" key={item.id}>
+                           <div className="item-img">
+                              <img src={item.image} alt={item.title} />
+                           </div>
+                           <div className="details">
+                           <h2>{item.title}</h2>
+                           <p>Unit Price: {item.price}</p>
+
+                           <div className="qty">
+                              <span>+</span> <span>{item.qty}</span> <span>-</span>
+                           </div>
+                           </div>
+
+                           <div className="total-price">
+                              <p>{item.totalPrice}</p>
+                           </div>
+                        </div>
+                     )
+                  })
+               }
+            </div>
       )
     }
 
