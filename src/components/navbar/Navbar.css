@@ -4,7 +4,9 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
 }
 .navbar a{
     font-size: 17px;

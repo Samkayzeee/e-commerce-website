@@ -49,8 +49,23 @@
         flex-direction: column;
         /* border: solid; */
     }
+    .main-viewproduct .product-img{
+        width: 100%;
+    }
     .main-viewproduct .details{
         width: 100%;
         padding: 3%;
+        /* text-align: center; */
+        /* border: solid; */
+        margin-top: 5%;
+        /* border: solid; */
     }
+    /* .main-viewproduct .details .title{
+        border: solid;
+        font-size: 30px;
+    } */
+    .main-viewproduct .details .btns{
+        text-align: center;
+    }
+    
 }

@@ -3,14 +3,7 @@
     "development"
   ],
   "hints": {
-    "compat-api/css": [
-      "default",
-      {
-        "ignore": [
-          "width: fit-content"
-        ]
-      }
-    ],
+    "compat-api/css": "off",
     "detect-css-reflows/layout": "off"
   }
 }

@@ -67,8 +67,10 @@ const ViewProductsPage = () => {
                         <p className="desc">
                             {product.description}
                         </p>
-                        <button className="btn btn-dark" onClick={addToCart}>Add to Cart</button>
-                        <Link className="btn btn-outline-dark ms-2" to={'/cart'}>Go to Cart</Link>
+                        <div className="btns">
+                            <button className="btn btn-dark" onClick={addToCart}>Add to Cart</button>
+                            <Link className="btn btn-outline-dark ms-2" to={'/cart'}>Go to Cart</Link>
+                        </div>
                     </div>
                 </div>
             </>
