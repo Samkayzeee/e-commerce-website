@@ -22,7 +22,6 @@ const LoginPage = () => {
         }    
 
         if (!Userdata) {
-            // wrongLogin.innerHTML = "User Not Register Try Signing Up";
             wrongLogin.style.color = 'red';
             setWrong("User Not Register Try Signing Up");
         }
@@ -32,7 +31,6 @@ const LoginPage = () => {
                 localStorage.setItem("token", JSON.stringify(token));
                 wrongLogin.style.color = "green";
                 setWrong("Login Successful");
-                // wrongLogin.innerHTML = "Login Successful";
 
                 setTimeout(() => {
                     navigate('/products');
@@ -42,7 +40,6 @@ const LoginPage = () => {
             else{
                 wrongLogin.style.color = 'red';
                 setWrong("Login Not Successful");
-                // wrongLogin.innerHTML = "Login Not Successful";
             }
         }
     }

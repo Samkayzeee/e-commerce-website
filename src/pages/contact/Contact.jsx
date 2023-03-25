@@ -47,8 +47,6 @@ const ContactPage = () => {
                         <li> <span>Email: </span>lasisiabdulsamad7@gmail.com</li>
                     </ol>
                     </div>
-
-
                 </div>
             </DefaultLayout>
      );

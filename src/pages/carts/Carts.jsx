@@ -1,7 +1,7 @@
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
 import './Carts.css';
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { handleCart } from "../../redux/handleCart";
 
@@ -23,7 +23,7 @@ const Cart = () => {
       if (!token) {
          navigate('/login');
      }
-    },[])
+    },[]);
 
     const EmptyCart = () => {
          return(
@@ -43,7 +43,7 @@ const Cart = () => {
                {
                   cart.map((item) => {
                      return(
-                        <div className="item" key={item.id}>
+                        <div className={`item`} key={item.id}>
                            <div className="img-details">
 
                            <div className="item-img">
