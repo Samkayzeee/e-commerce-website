@@ -6,6 +6,7 @@ import './ViewProducts.css';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { handleCart } from "../../redux/handleCart";
+import Skeleton from "react-loading-skeleton";
 
 
 
@@ -37,11 +38,24 @@ const ViewProductsPage = () => {
     const Loading = () => {
         return(
             <>
-                <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
+            <div className="viewproducts-loading">
+                <div className="img col-md-6">
+                    <Skeleton height={450} width={"100%"}/>
+                </div>
+
+                <div className="details col-md-6">
+                    <Skeleton height={50} width={300} />
+                    <Skeleton height={75} />
+                    <Skeleton height={25} width={150} />
+                    <Skeleton height={50} width={150} />
+                    <Skeleton height={150} />
+                    <div className="btns">
+                        <button><Skeleton height={40} width={100}/></button>
+                        <button><Skeleton height={40} width={100} /></button>
                     </div>
                 </div>
+            </div>
+
 
             </>
         )

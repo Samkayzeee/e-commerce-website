@@ -17,6 +17,12 @@
 .navbar-toggler{
     position: relative;
 }
+.navbar-nav .nav-item{
+    transition: all .3s;
+}
+.navbar-nav .nav-item:hover{
+    transform: translateY(-5px);
+}
 .show-cart{
     position: absolute;
     border: none;

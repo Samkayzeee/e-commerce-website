@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import { Provider } from 'react-redux';
 import Loading from './components/loading/Loading';
 import store from './redux/store';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 
 const HomePage = React.lazy(() => import('./pages/home/Home'));

@@ -1,6 +1,32 @@
 .products-container{
     padding: 4%;
 }
+/* loading styling */
+.products-loading h1{
+    margin: 0 auto;
+    width: fit-content;
+}
+.products-loading .loading-btns{
+    padding: 3% 0;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+.products-loading .loading-btns button{
+    margin: 0 10px;
+    border-radius: 8px;
+    border: none;
+}
+.products-loading .product-loading{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+.products-loading .product-loading .loading{
+    width: 280px;
+}
+
+/* loading styling */
 .products-container .error{
     color: red;
     font-weight: 800;
@@ -52,16 +78,38 @@
     font-weight: 700;
 }
 @media screen and (max-width:1100px) {
+    /* loading styling */
+    .products-loading .product-loading{
+        grid-template-columns: auto auto auto;
+    }
+    /* loading styling */
     .product-container .main_products-container{
         grid-template-columns: auto auto auto;
     }
 }
 @media screen and (max-width:980px) {
+    /* loading styling */
+    .products-loading .product-loading{
+        grid-template-columns: auto auto;
+    }
+    .products-loading .loading-btns{
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+    }
+    .products-loading .loading-btns button{
+        width: fit-content;
+        margin: 5px 1%;
+    }
+    .products-loading .product-loading .loading{
+        width: 320px;
+    }
+    /* loading styling */
+
     .product-container .main_products-container{
         grid-template-columns: auto auto;
     }
     .product-container .filter-buttons{
-        /* margin: 0; */
         width: 100%;
         height: fit-content;
         text-align: center;
@@ -73,6 +121,13 @@
     }
 }
 @media screen and (max-width:700px) {
+    .products-loading .product-loading{
+        display: flex;
+        flex-direction: column;
+    }
+    .products-loading .product-loading .loading{
+        width: 100%;
+    }
     .product-container .main_products-container{
         display: flex;
         flex-direction: column;

@@ -2,6 +2,7 @@ import './Product.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
 
 const Product = () => {
     const [data, setData] = useState([]);
@@ -34,13 +35,37 @@ const Product = () => {
 
     const Loading = () => {
         return (
-            <>
-                <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
+            <div className='products-loading'>
+                <div className="title">
+                    <h1><Skeleton height={50} width={300}/></h1>
                 </div>
-            </>
+            <div className="loading-btns">
+                <button><Skeleton className='btn' height={40} width={50} /></button>
+                <button><Skeleton className='btn' height={40} width={130}/></button>
+                <button><Skeleton className='btn' height={40} width={160}/></button>
+                <button><Skeleton className='btn' height={40} width={100}/></button>
+                <button><Skeleton className='btn' height={40} width={90}/></button>
+            </div>
+                <div className="product-loading">
+                    <div className="loading">
+                        <Skeleton height={350} width={"100%"}/>
+                    </div>
+
+                    <div className="loading">
+                        <Skeleton height={350} width={"100%"}/>
+                    </div>
+
+                    <div className="loading">
+                        <Skeleton height={350} width={"100%"}/>
+                    </div>
+
+                    <div className="loading">
+                        <Skeleton height={350} width={"100%"}/>
+                    </div>
+                </div> 
+
+
+            </div>
         )
     }
 

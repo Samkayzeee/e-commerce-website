@@ -37,7 +37,7 @@ const ContactPage = () => {
                     <input type="text" name="" id="" placeholder="Subject" required/>
                     <textarea name="message" id="" cols={30} rows={10} placeholder="Message" required></textarea>
                     <p ref={messageRef} className="message">{message}</p>
-                    <button type="submit">Send Message</button>
+                    <button className="btn btn-outline-dark" type="submit">Send Message</button>
                 </form>
 
                     <div className="contact-information">
