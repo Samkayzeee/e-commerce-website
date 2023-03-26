@@ -42,8 +42,9 @@
 .main-viewproduct .details{
     width: 45%;
     align-self: center;
+    transition: all .3s;
 }
-.main-viewproduct .details .category{
+    .main-viewproduct .details .category{
     text-transform: uppercase;
     opacity: 0.7;
     font-weight: 700;

@@ -21,9 +21,11 @@
         font-size: 31px;
         font-weight: 900;
         margin: 3% 0;
+        text-align: center;
     }
     .homepage .section1 h4{
-        font-size: 25px;
-        margin: 3% 0;
+        font-size: 22px;
+        margin: 6% 0 0 0;
+        text-align: center;
     }
 }

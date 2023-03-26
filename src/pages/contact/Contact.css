@@ -1,5 +1,16 @@
 .contact-container{
     padding: 2% 4%;
+    animation: scalein;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+}
+@keyframes scalein {
+    0%{
+      transform: scale(0.6, 0.6);
+    }
+    100%{
+      transform: scale(1, 1);
+    }
 }
 .contact-container h1{
     text-align: center;
