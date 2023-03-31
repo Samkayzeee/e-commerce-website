@@ -1,6 +1,7 @@
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
 import './Contact.css';
 import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 const ContactPage = () => {
     const formRef = useRef(null);
