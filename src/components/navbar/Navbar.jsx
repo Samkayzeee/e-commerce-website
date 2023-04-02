@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -29,16 +29,16 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link" aria-current="page" to={'/'}>Home</Link>
+          <NavLink exact='true' className="nav-link" aria-current="page" to={'/'} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : ''})} >Home</NavLink>
         </li>
         <li className="nav-item">
-          <Link to={'/products'} className="nav-link">Products</Link>
+          <NavLink to={'/products'} className="nav-link" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : ''})} >Products</NavLink>
         </li>
         <li className="nav-item">
-          <Link to={'/about'} className="nav-link">About</Link>
+          <NavLink to={'/about'} className="nav-link" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : ''})} >About</NavLink>
         </li>
         <li className="nav-item">
-          <Link to={'/contact'} className="nav-link">Contacts</Link>
+          <NavLink to={'/contact'} className="nav-link" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : ''})} >Contacts</NavLink>
         </li>
       </ul>
 
