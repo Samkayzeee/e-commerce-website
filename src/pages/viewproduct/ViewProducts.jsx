@@ -4,7 +4,7 @@ import axios from "axios";
 import DefaultLayout from './../../layouts/DefaultLayouts/DefaultLayout';
 import './ViewProducts.css';
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { handleCart } from "../../redux/handleCart";
 import Skeleton from "react-loading-skeleton";
 
@@ -60,8 +60,25 @@ const ViewProductsPage = () => {
             </>
         )
     }
+
     const addToCart = () => {
         dispatch(handleCart.addCart(product));
+        // const FetchCart = localStorage.getItem('cart');
+
+        // if (FetchCart === null) {
+        //     console.log("It's Null");
+        //     localStorage.setItem('cart', JSON.stringify([product]));
+        // }
+        // else{
+        //     const ParseCart = JSON.parse(FetchCart);
+        //     const exist = ParseCart.find((item) => item.id == product.id);
+        //     if (exist) {
+        //         return
+        //     }
+        //     else{
+        //         localStorage.setItem('cart', JSON.stringify([...ParseCart, product]));
+        //     }
+        // }
     }
 
     // showing products
