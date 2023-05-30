@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import Loading from './components/loading/Loading';
 import store from './redux/store';
 import 'react-loading-skeleton/dist/skeleton.css';
+import Checkout from './pages/checkout/Checkout';
 
 
 const HomePage = React.lazy(() => import('./pages/home/Home'));
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
   {path: '/login', element: <LoginPage />},
   {path: '/products', element: <ProductsPage />},
   {path: '/products/:id', element: <ViewProducts />},
-  {path: '/cart', element: <Cart />}
+  {path: '/cart', element: <Cart />},
+  {path: '/checkout', element: <Checkout />}
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
