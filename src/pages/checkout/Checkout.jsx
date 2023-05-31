@@ -1,13 +1,22 @@
 import paystackPop from '@paystack/inline-js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useContext } from "react";
 import { PaymentAmountContext } from "../../contexts/AmountPay";
 import { useNavigate } from 'react-router-dom';
+import './Checkout.css';
 
 const Checkout = () => {
     const context = useContext(PaymentAmountContext);
-    const amount = Math.round(context.amount);
     const navigate = useNavigate();
+
+    // navigate when amount to be paid is 0
+    useEffect(() => {
+        if (context.amount === 0) {
+            navigate('/');
+        }
+    },[]);
+
+    const amount = Math.round(context.amount) * 460.95; 
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -17,7 +26,7 @@ const Checkout = () => {
         const paystack = new paystackPop();
         paystack.newTransaction({
             key: "pk_test_54d1f426306c42084dc16f9f7e0ea4e61e0cf169",
-            amount: amount * 100,
+            amount: amount,
             email,
             lastName,
             firstName,
@@ -40,13 +49,13 @@ const Checkout = () => {
 
     return ( 
         <>
-            <div className="checkout">
+            <div className="checkout_page">
                 <form action="" onSubmit={pay}>
-                    <h3>Make Payment</h3>
+                    <h3>Make Your Payment</h3>
                     <input type="email" name="" id="" placeholder='Enter Your Email' onChange={(e) => setEmail(e.target.value)} required/>
                     <input type="text" name="" id="" placeholder='Your FirstName' onChange={(e) =>setFirstName(e.target.value)} required/>
                     <input type="text" name="" id="" placeholder='Your LastName'onChange={(e) =>setLastName(e.target.value)} required/>
-                    <input type="tel" name="amount" id="amount"  defaultValue={amount} required/>
+                    <input type="tel" name="amount" id="amount"  defaultValue={amount} required disabled/>
                     <button>Make Payment</button>
                 </form>
             </div>

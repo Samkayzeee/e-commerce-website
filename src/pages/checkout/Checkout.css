@@ -1,0 +1,22 @@
+.checkout_page{
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../../assets/shopping-carts-facing-each-other.jpg');
+    background-position: center;
+    border: solid;
+    padding: 30% 0;
+}
+
+
+
+.checkout_page form{
+    width: 70%;
+    margin: 0 auto;
+    border: solid;
+    text-align: center;
+    padding: 3%;
+}
+.checkout_page form input{
+    display: block;
+    margin: 2% 0;
+}
