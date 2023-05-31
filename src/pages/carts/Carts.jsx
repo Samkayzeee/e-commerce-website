@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { handleCart } from "../../redux/handleCart";
-import Checkout from "../checkout/Checkout";
+import { useContext } from "react";
+import { PaymentAmountContext } from "../../contexts/AmountPay";
 
 
 const Cart = () => {
@@ -12,6 +13,7 @@ const Cart = () => {
     let token = localStorage.getItem("token");
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart.value);
+    const context = useContext(PaymentAmountContext);
 
 
    //  total
@@ -19,6 +21,7 @@ const Cart = () => {
     cart.forEach((item) => {
       total += item.totalPrice
     });
+
 
     useEffect(() => {
       if (!token) {
@@ -75,7 +78,10 @@ const Cart = () => {
                }
                <div className="checkout">
                   <div className="btn">
-                     <button>Proceed to Checkout</button>
+                     <button onClick={() => {
+                        context.setAmount(total);
+                        navigate('/checkout');
+                     }}>Proceed to Checkout</button>
                   </div>
 
                   <div className="details">

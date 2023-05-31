@@ -9,6 +9,7 @@ import Loading from './components/loading/Loading';
 import store from './redux/store';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Checkout from './pages/checkout/Checkout';
+import AmountProviderContext from './contexts/AmountPay';
 
 
 const HomePage = React.lazy(() => import('./pages/home/Home'));
@@ -35,10 +36,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AmountProviderContext>
     <Suspense fallback={<Loading />}>
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>
     </Suspense>
+    </AmountProviderContext>
   </React.StrictMode>
 )
