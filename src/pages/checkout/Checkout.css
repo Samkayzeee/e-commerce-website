@@ -10,13 +10,49 @@
 
 
 .checkout_page form{
-    width: 70%;
-    margin: 0 auto;
+    width: 60%;
+    margin: auto;
     border: solid;
-    text-align: center;
-    padding: 3%;
+    background-color: white;
+    padding: 4% 3%;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 6px 5px 20px rgb(67, 67, 67);
+}
+.checkout_page form h3{
+    font-size: 35px;
+    font-weight: 500;
 }
 .checkout_page form input{
+    margin: 3% 0;
     display: block;
-    margin: 2% 0;
+    padding: 2% 5%;
+    background-color: rgb(146, 144, 144);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+}
+.checkout_page form input:focus{
+    outline: none;
+}
+.checkout_page form input::placeholder{
+    color: white;
+    font-size: 15px;
+}
+.checkout_page form.status{
+    font-size: 16px;
+    font-weight: 700;
+}
+.checkout_page form button{
+    border: none;
+    padding: 10px 15px;
+    background-color: rgb(146, 144, 144);
+    color: white;
+    border-radius: 5px;
+    transition: all .3s;
+    margin: 4% 0;
+}
+.checkout_page form button:hover{
+    box-shadow: 0 3px 10px rgb(146, 144, 144);
 }
