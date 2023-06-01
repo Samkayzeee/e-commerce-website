@@ -31,6 +31,9 @@ const cartSlice = createSlice({
             if (existItem) {
                 state.value = state.value.filter(item => item.id !== id);
             }
+        },
+        clearItem: (state, action) => {
+            state.value = [];
         }
     }
 })
