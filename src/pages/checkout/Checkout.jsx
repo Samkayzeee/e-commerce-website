@@ -16,7 +16,7 @@ const Checkout = () => {
         }
     },[]);
 
-    const amount = Math.round(context.amount) * 460.95; 
+    const amount = Math.round(context.amount * 460.95); 
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -60,7 +60,7 @@ const Checkout = () => {
                     <input type="text" name="First_Name" id="firstname" placeholder='Your FirstName' onChange={(e) =>setFirstName(e.target.value)} required/>
                     <input type="text" name="Last_Name" id="lastname" placeholder='Your LastName'onChange={(e) =>setLastName(e.target.value)} required/>
                     <input type="email" name="email" id="email" placeholder='Enter Your Email' onChange={(e) => setEmail(e.target.value)} required/>
-                    <input type="text" name="amount" id="amount"  defaultValue={amount} required disabled/>
+                    <input type="text" name="amount" id="amount"  defaultValue={`NGN ${amount}`} required disabled/>
                     <p className='status' ref={statusRef}>{status}</p>
                     <button>Make Payment</button>
                 </form>
