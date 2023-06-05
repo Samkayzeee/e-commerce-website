@@ -116,6 +116,7 @@
         width: 100%;
         height: fit-content;
         text-align: center;
+        display: none;
     }
     .products-loading .loading-btns button{
         width: fit-content;
@@ -165,6 +166,7 @@
 @media screen and (max-width:400px) {
     .products-loading .loading-btns{
         width: 75%;
+        display: none;
     }
     .product-container .filter-buttons{
         width: 75%;
