@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+import { Icon } from '@iconify/react';
 
 const Product = () => {
     const [data, setData] = useState([]);
@@ -84,11 +85,11 @@ const Product = () => {
                 <h1> Latest Products </h1>
 
                     <div className="filter-buttons">
-                        <button className='btn btn-outline-dark' onClick={() => setFilter(data)}>All</button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("men's clothing")}>Men's Products</button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("women's clothing")}>Women's Products</button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("electronics")}>Electronics</button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("jewelery")}>Jewelries</button>
+                        <button className='btn btn-outline-dark' onClick={() => setFilter(data)}> <span>All</span> <span><Icon icon="solar:global-outline" /></span> </button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("men's clothing")}> <span>Men's Products</span><span><Icon icon="icons8:user-male" /></span> </button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("women's clothing")}> <span>Women's Products</span><span><Icon icon="icons8:user-female" /></span> </button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("electronics")}> <span>Electronics</span> <span><Icon icon="streamline:computer-screen-1-screen-device-electronics-monitor-diplay-computer" /></span> </button>
+                        <button className='btn btn-outline-dark' onClick={() => filterProduct("jewelery")}> <span>Jewelries</span> <span><Icon icon="streamline:shopping-jewelry-diamond-2-diamond-money-payment-finance-wealth" /></span> </button>
                     </div>
 
                     <div className="main_products-container">

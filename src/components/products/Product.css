@@ -49,6 +49,12 @@
     margin: 0 10px;
     font-weight: 700;
 }
+.product-container .filter-buttons button span:last-child{
+    font-size: 20px;
+    font-weight: 900;
+    display: none;
+}
+
 .product-container .main_products-container{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -145,6 +151,15 @@
     .product-container .main_products-container{
         display: flex;
         flex-direction: column;
+    }
+    .product-container .filter-buttons button{
+       padding: 5px 8px;
+    }
+    .product-container .filter-buttons button span:first-child{
+        display: none;
+    }
+    .product-container .filter-buttons button span:last-child{
+        display: block;
     }
 }
 @media screen and (max-width:400px) {
