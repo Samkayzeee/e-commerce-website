@@ -35,7 +35,7 @@
     padding-top: 3px;
     color: white;
     font-weight: 800;
-    top: 0;
+    top: -8px;
 }
 .navbar .container-fluid .collapse .buttons ul li{
     margin-left: 15px;
