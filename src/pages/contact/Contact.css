@@ -60,6 +60,12 @@
     color: rgb(100, 195, 100);
     font-weight: 700;
   }
+  /* .contact-form p:first-child{
+    color: red;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+  } */
   .contact-container .contact-information h2{
     margin: 3% 0;
   }

@@ -4,9 +4,23 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
 const ContactPage = () => {
+    // ref
     const formRef = useRef(null);
     const messageRef = useRef(null);
+    const EmailRef = useRef(null);
+
+    // States
     const [message, setMessage] = useState("");
+    const [isEmailValid, setIsEmailValid] = useState(true);
+
+    // sending message with valid email function
+    const validEMail = () => {
+        const Email_Ref = EmailRef.current;
+        const emailPattern = /^[^\s@]{6,}@[^\s@]+\.[^\s@]+$/;
+        let theEmail = Email_Ref.value;
+        let validEmail = emailPattern.test(theEmail);
+        setIsEmailValid(validEmail);
+    }
 
     const sendmail  = async(e) => {
         e.preventDefault();
@@ -14,15 +28,25 @@ const ContactPage = () => {
         const message_ref = messageRef.current;
 
         try{
-            const result = await emailjs.sendForm('service_fxvcxyj', 'template_vggxabq', form, 'CC6qrRtlQzRCdePxS');
+
+           if (isEmailValid) {
+            await emailjs.sendForm('service_fxvcxyj', 'template_vggxabq', form, 'CC6qrRtlQzRCdePxS');
             message_ref.style.color = `rgb(100, 195, 100)`;
             setMessage("Message sent Successfully");
+            e.target.reset();
+           }
+           else{
+            throw new Error("Your Email is Invalid try using normal Email");
+           }
         } catch (error){
             message_ref.style.color = "red";
-            setMessage("Theirs was an error sending your mail");
+            if(!isEmailValid){
+                setMessage(error.message);
+            }
+            else if(isEmailValid){
+                setMessage("Theirs is an error sending your mail check your connection");
+            }
         }
-
-        e.target.reset();
     }
 
 
@@ -33,11 +57,18 @@ const ContactPage = () => {
                     <h2>Get in Touch</h2>
 
                     <form ref={formRef} action="" className="contact-form" onSubmit={sendmail}>
+
                     <input type="text" name="name" id="" placeholder="Your Name" required/>
-                    <input type="email" name="email" id="" placeholder="Your Email" required/>
+
+                    <input ref={EmailRef} type="email" onBlur={validEMail} name="email" id="" placeholder="Your Email" required/>
+                    {!isEmailValid && <p style={{color:"red"}}>Please enter a valid email address</p>}
+
                     <input type="text" name="" id="" placeholder="Subject" required/>
+
                     <textarea name="message" id="" cols={30} rows={10} placeholder="Message" required></textarea>
+
                     <p ref={messageRef} className="message">{message}</p>
+
                     <button className="btn btn-outline-dark" type="submit">Send Message</button>
                 </form>
 
