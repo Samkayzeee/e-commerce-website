@@ -58,7 +58,8 @@
   }
   .contact-form p{
     color: rgb(100, 195, 100);
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 15px;
   }
   /* .contact-form p:first-child{
     color: red;
@@ -100,3 +101,40 @@
       font-size: 10px;
     }
   }
+
+
+
+  /* Message Loading styles */
+@keyframes ldio-zlxdtiiq8cb {
+  0% { transform: translate(-50%,-50%) rotate(0deg); }
+  100% { transform: translate(-50%,-50%) rotate(360deg); }
+}
+.ldio-zlxdtiiq8cb div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 10px solid #e15b64;
+  border-top-color: transparent;
+  border-radius: 50%;
+}
+.ldio-zlxdtiiq8cb div {
+  animation: ldio-zlxdtiiq8cb 1s linear infinite;
+  top: 50px;
+  left: 50px
+}
+.loadingio-spinner-rolling-vc8zers97pd {
+  width: 41px;
+  height: 41px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+.ldio-zlxdtiiq8cb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.41);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+.ldio-zlxdtiiq8cb div { box-sizing: content-box; }
