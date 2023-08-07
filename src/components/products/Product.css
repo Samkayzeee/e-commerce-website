@@ -94,6 +94,9 @@
 .product-container .main_products-container .main-product:hover .products-img img{
     transform: scale(1.05, 1.05);
 }
+.product-container .main_products-container .main-product .details .products-title{
+    margin: 4% 0;
+}
 .product-container .main_products-container .main-product .details .products-price{
     font-weight: 700;
 }
