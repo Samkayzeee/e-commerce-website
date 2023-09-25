@@ -2,15 +2,18 @@
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../../assets/shopping-carts-facing-each-other.jpg');
-        height: 100vh;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        padding: 8% 0;
+        /* padding: 8% 0; */
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 .checkout_page form{
     width: 50%;
-    margin: auto;
+    /* margin: auto; */
     border: solid;
     background-color: white;
     padding: 4% 3%;
