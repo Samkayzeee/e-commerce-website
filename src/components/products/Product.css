@@ -72,14 +72,6 @@
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
-@keyframes scalein{
-    0%{
-        transform: scale(0, 0);
-    }
-    100%{
-        transform: scale(1, 1);
-    }
-}
 .product-container .main_products-container .main-product .products-img{
     height: 250px;
     width: 250px;
@@ -175,4 +167,12 @@
     .product-container .filter-buttons{
         width: 75%;
     }
+}
+
+
+
+/* dark mode */
+
+.product-darkmode{
+    background-color: #191970;
 }

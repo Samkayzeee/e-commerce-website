@@ -4,12 +4,17 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import { Icon } from '@iconify/react';
+import { ThemeContext } from '../../contexts/ThemeProvider';
+import { useContext } from 'react';
 
 const Product = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+
+
+    const context = useContext(ThemeContext);
 
     useEffect(() => {
         const getProducts = async() => {

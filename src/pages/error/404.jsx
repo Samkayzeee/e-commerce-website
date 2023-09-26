@@ -5,7 +5,8 @@ import './404.css';
 const Error404Page = () => {
     return ( 
         <>
-            <div className="error_404">
+        <div className="wrap-error">
+        <div className="error_404">
                 <h1>Oops!</h1>
                 <h3>404 - PAGE NOT FOUND</h3>
                 <p>
@@ -14,6 +15,7 @@ const Error404Page = () => {
                 </p>
                 <Link to={'/'}>GO TO HOMEPAGE</Link>
             </div>
+        </div>
         </>
      );
 }
