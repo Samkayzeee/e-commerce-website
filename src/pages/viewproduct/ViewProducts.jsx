@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { handleCart } from "../../redux/handleCart";
 import Skeleton from "react-loading-skeleton";
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeProvider";
 
 
 
@@ -17,6 +19,8 @@ const ViewProductsPage = () => {
     const navigate = useNavigate();
     let token = localStorage.getItem("token");
     const dispatch = useDispatch();
+
+    const context = useContext(ThemeContext);
 
     // fetching single product
     useEffect(() => {
@@ -85,7 +89,7 @@ const ViewProductsPage = () => {
     const ShowProduct = () => {
         return(
             <>
-                <div className="main-viewproduct">
+                <div className="main-viewproduct" style={{color: context.theme === 'light' ? null : '#FFF'}}>
                     <div className="product-img">
                         <img src={product.image} alt="" />
                     </div>
@@ -100,7 +104,7 @@ const ViewProductsPage = () => {
                         </p>
                         <div className="btns">
                             <button className="btn btn-dark" onClick={addToCart}>Add to Cart</button>
-                            <Link className="btn btn-outline-dark ms-2" to={'/cart'}>Go to Cart</Link>
+                            <Link className={`ms-2 ${context.theme === 'light' ? "btn btn-outline-dark" : "btn btn-outline-light"}`} to={'/cart'}>Go to Cart</Link>
                         </div>
                     </div>
                 </div>

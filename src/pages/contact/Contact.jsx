@@ -2,11 +2,14 @@ import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
 import './Contact.css';
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import { ThemeContext } from "../../contexts/ThemeProvider";
+import { useContext } from "react";
 
 const ContactPage = () => {
     // ref
     const formRef = useRef(null);
     const EmailRef = useRef(null);
+    const context = useContext(ThemeContext);
 
     // States
     const [message, setMessage] = useState("");
@@ -65,11 +68,11 @@ const ContactPage = () => {
 
     return ( 
             <DefaultLayout>
-                <div className="contact-container">
+                <div className="contact-container" style={{color: context.theme === 'light' ? null : '#FFF'}}>
                     <h1>Contact Us</h1>
                     <h2>Get in Touch</h2>
 
-                <form ref={formRef} action="" className="contact-form" onSubmit={sendmail}>
+                <form ref={formRef} action="" className={context.theme === 'light' ? "contact-form" : "contact-form darkmode-contact-form"} onSubmit={sendmail}>
 
                     <input type="text" name="name" id="" placeholder="Your Name" required/>
 
@@ -84,10 +87,10 @@ const ContactPage = () => {
                         loading ? <Loading /> : <p style={{color: successful ?  "rgb(100, 195, 100)" : "red"}} className="message">{message}</p>
                     }
 
-                    <button className="btn btn-outline-dark" type="submit">Send Message</button>
+                    <button className={`btn ${context.theme === 'light' ? "btn-outline-dark" : "btn-outline-light"}`} type="submit">Send Message</button>
                 </form>
 
-                    <div className="contact-information">
+                    <div className="contact-information" style={{color: context.theme === 'light' ? null : '#FFF'}}>
                         <h2>Contact Informations</h2>
                     <ol>
                         <li> <span>Phone: </span>+2347019665230</li>

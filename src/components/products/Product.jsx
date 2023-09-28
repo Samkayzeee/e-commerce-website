@@ -12,6 +12,7 @@ const Product = () => {
     const [filter, setFilter] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    // const [theme, setTheme] = useState(null);
 
 
     const context = useContext(ThemeContext);
@@ -36,6 +37,8 @@ const Product = () => {
             setLoading(false);
         }
         getProducts();
+
+
     },[])
 
 
@@ -86,15 +89,15 @@ const Product = () => {
             {
                 error ? <h1 className="error"> { error } Can't Fetch Products</h1> 
                 : 
-                <div className="product-container">
+                <div className={context.theme === 'light'? "product-container" : "product-container product-darkmode"}>
                 <h1> Latest Products </h1>
 
                     <div className="filter-buttons">
-                        <button className='btn btn-outline-dark' onClick={() => setFilter(data)}> <span>All</span> <span><Icon icon="solar:global-outline" /></span> </button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("men's clothing")}> <span>Men's Products</span><span><Icon icon="icons8:user-male" /></span> </button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("women's clothing")}> <span>Women's Products</span><span><Icon icon="icons8:user-female" /></span> </button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("electronics")}> <span>Electronics</span> <span><Icon icon="streamline:computer-screen-1-screen-device-electronics-monitor-diplay-computer" /></span> </button>
-                        <button className='btn btn-outline-dark' onClick={() => filterProduct("jewelery")}> <span>Jewelries</span> <span><Icon icon="streamline:shopping-jewelry-diamond-2-diamond-money-payment-finance-wealth" /></span> </button>
+                        <button className={context.theme === 'light' ? 'btn btn-outline-dark' : 'btn btn-outline-light'} onClick={() => setFilter(data)}> <span>All</span> <span><Icon icon="solar:global-outline" /></span> </button>
+                        <button className={context.theme === 'light' ? 'btn btn-outline-dark' : 'btn btn-outline-light'} onClick={() => filterProduct("men's clothing")}> <span>Men's Products</span><span><Icon icon="icons8:user-male" /></span> </button>
+                        <button className={context.theme === 'light' ? 'btn btn-outline-dark' : 'btn btn-outline-light'} onClick={() => filterProduct("women's clothing")}> <span>Women's Products</span><span><Icon icon="icons8:user-female" /></span> </button>
+                        <button className={context.theme === 'light' ? 'btn btn-outline-dark' : 'btn btn-outline-light'} onClick={() => filterProduct("electronics")}> <span>Electronics</span> <span><Icon icon="streamline:computer-screen-1-screen-device-electronics-monitor-diplay-computer" /></span> </button>
+                        <button className={context.theme === 'light' ? 'btn btn-outline-dark' : 'btn btn-outline-light'} onClick={() => filterProduct("jewelery")}> <span>Jewelries</span> <span><Icon icon="streamline:shopping-jewelry-diamond-2-diamond-money-payment-finance-wealth" /></span> </button>
                     </div>
 
                     <div className="main_products-container">
@@ -111,7 +114,7 @@ const Product = () => {
                                                 <p className="products-price">$ {products.price}</p>
                                             </div>
 
-                                            <Link to={`/products/${products.id}`} className="btn btn-outline-dark">Buy Now</Link>
+                                            <Link to={`/products/${products.id}`} className={context.theme === 'light' ? 'btn btn-outline-dark' : 'btn btn-outline-light'}>Buy Now</Link>
                                         </div>
                                 )
                             })

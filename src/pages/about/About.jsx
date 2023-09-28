@@ -1,14 +1,17 @@
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
 import './About.css';
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeProvider";
 
 const AboutPage = () => {
+     const context = useContext(ThemeContext);
     return ( 
             <DefaultLayout>
                <div className="about">
                <div className="section1">
 
                </div>
-               <div className="details">
+               <div className="details" style={{color: context.theme === 'light' ? null : '#FFF'}}>
                <h2>About Us</h2>
                     <p>Welcome to Samkayzee Products, where we're passionate about providing our customers with the best shopping experience possible. Our company was founded on the principle of putting customers first, and we strive to maintain that philosophy every day.</p>
                     <p>Our mission is simple: to offer high-quality products at affordable prices while providing top-notch customer service. We believe that everyone deserves to have access to the latest trends and styles, which is why we're always adding new items to our inventory.</p>
