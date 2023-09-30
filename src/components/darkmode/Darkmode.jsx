@@ -19,7 +19,7 @@ const Darkmode = () => {
         <>
             <div className="mode">
                 <button onClick={toggleTheme}> 
-                    <i className={context.theme === 'light' ? 'bx bxs-moon' : 'bx bxs-sun'}></i>
+                    <i className={context.theme === 'light' ? 'bx bxs-moon' : 'bx bxs-sun text-light'}></i>
                 </button>
             </div>
         </>

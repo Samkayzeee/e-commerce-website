@@ -23,7 +23,7 @@ const Navbar = () => {
 <nav className={`navbar navbar-expand-lg bg-body-tertiary py-3 shadow-sm ${context.theme === 'light' ? null : 'navbar-darkmode'}`}>
   <div className="container-fluid">
     <Link to={'/'} className="navbar-brand">SAMKAYZEE.</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button className={`navbar-toggler ${context.theme === 'light' ? null : 'bg-light'}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span> 
               {
                 cartLength.length === 0 ? null : <span className='show-cart'>{cartLength.length}</span>
