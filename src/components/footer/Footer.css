@@ -54,3 +54,12 @@
         font-size: 10px;
     }
 }
+
+.footer-darkmode{
+    color: #FFF;
+    background: #000000;
+}
+
+.footer-darkmode .icons li a{
+    color: #FFF;
+}

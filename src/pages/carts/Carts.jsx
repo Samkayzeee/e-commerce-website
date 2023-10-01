@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleCart } from "../../redux/handleCart";
 import { useContext } from "react";
 import { PaymentAmountContext } from "../../contexts/AmountPay";
+import { ThemeContext } from "../../contexts/ThemeProvider";
 
 
 const Cart = () => {
@@ -14,6 +15,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart.value);
     const context = useContext(PaymentAmountContext);
+    const darkmodeContext = useContext(ThemeContext);
 
 
    //  total
@@ -32,10 +34,10 @@ const Cart = () => {
     const EmptyCart = () => {
          return(
             <>
-               <div className="empty-cart">
+               <div className={darkmodeContext.theme === 'light' ? "empty-cart" : "empty-cart cart-darkmode"}>
                   <h1> Your Cart is empty.. </h1>
                   <h1> Go back to products page to shop some items..</h1>
-                  <Link className="btn btn-outline-dark" to={'/products'}> Go to Products Page </Link>
+                  <Link className={`btn ${darkmodeContext.theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'}`} to={'/products'}> Go to Products Page </Link>
                </div>
             </>
          )
@@ -43,7 +45,7 @@ const Cart = () => {
 
     const CartItems = () => {
       return(
-            <div className="cart-items">
+            <div className={darkmodeContext.theme === 'light'? "cart-items": "cart-items cart-darkmode"}>
                {
                   cart.map((item) => {
                      return(
@@ -53,7 +55,7 @@ const Cart = () => {
                            <div className="item-img">
                               <img src={item.image} alt={item.title} />
                               <div className="remove">
-                                 <i onClick={() => dispatch(handleCart.removeOneTime(item.id))} className="fa-solid fa-xmark fa-beat"></i>
+                                 <i onClick={() => dispatch(handleCart.removeOneTime(item.id))} className="fa-solid fa-xmark fa-beat text-dark"></i>
                               </div>
                            </div>
                            

@@ -1,10 +1,14 @@
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../../contexts/ThemeProvider';
 
 const Footer = () => {
+
+    const context = useContext(ThemeContext);
     return ( 
         <>
-            <footer className="footer">
+            <footer className={context.theme === 'light' ? "footer" : "footer footer-darkmode"}>
                 <div className="first">
                     SAMKAYZEE E-COMMERCE-WEBSITE All right reserved - Developed by Lasisi Abdulsamad
                 </div>

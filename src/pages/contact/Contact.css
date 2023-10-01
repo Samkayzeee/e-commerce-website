@@ -146,7 +146,14 @@
 }
 .ldio-zlxdtiiq8cb div { box-sizing: content-box; }
 
+
+
 .darkmode-contact-form{
     border: solid 1px #FFF;
     background: #000000;
+}
+.darkmode-contact-form input, .darkmode-contact-form textarea{
+  background: #000000;
+  border: solid 1px #FFF;
+  color: #FFF;
 }

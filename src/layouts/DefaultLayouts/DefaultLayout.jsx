@@ -13,7 +13,7 @@ const DefaultLayout = ({children}) => {
             <div style={{backgroundColor: context.theme === 'light'? null: '#000000'}}>
                 {children}
             </div>
-            {/* <Darkmode /> */}
+            <Darkmode />
             <Footer />
         </>
      );

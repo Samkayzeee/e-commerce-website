@@ -183,3 +183,14 @@
         margin: 34% 42%;
     }
 }
+
+.cart-darkmode{
+    color: #FFF;
+}
+.cart-darkmode .checkout .btn button{
+    color: black;
+    background-color: white;
+}
+.cart-darkmode .item .img-details .details .qty{
+    border: solid 1.5px white;
+}
