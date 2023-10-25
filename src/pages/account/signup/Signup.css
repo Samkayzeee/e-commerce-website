@@ -8,7 +8,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 5% 0;
+    /* padding: 5% 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .signup-container .signup-form{
@@ -71,39 +74,40 @@
 }
 .signup-container .signup-form .success{
     color: green;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 600;
 }
 
  @media screen and (max-width:1100px) {
-    .signup-container{
+    /* .signup-container{
         height: 100%;
-    }
+    } */
     .signup-container .signup-form{
         width: 40%;  
     }
 }
 
 @media only screen and (min-width:821px) and (max-width:950px) {
-    .signup-container{
+    /* .signup-container{
         height: 100dvh;
         width: 100%;
         padding: 15% 0;
-    }
+    } */
     .signup-container .signup-form{
         width: 60%;
+        padding: 8% 4%;
     }
 }
 
 @media screen and (max-width:820px) {
-    .signup-container{
+    /* .signup-container{
         padding: 40% 0;
         width: 100%;
         height: 100dvh;
-    }
+    } */
     .signup-container .signup-form{
         width: 90%;
-        margin: auto;
+        /* margin: auto; */
         padding: 4% 4%;
     }
     .signup-container .signup-form input{

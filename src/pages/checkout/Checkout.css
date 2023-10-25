@@ -12,11 +12,11 @@
         align-items: center;
 }
 .checkout_page form{
-    width: 50%;
+    width: 40%;
     /* margin: auto; */
     border: solid;
     background-color: white;
-    padding: 4% 3%;
+    padding: 6% 3%;
     border-radius: 8px;
     border: none;
     box-shadow: 6px 5px 20px rgb(67, 67, 67);
@@ -60,19 +60,19 @@
 }
 
 @media only screen and (min-width:850px) and (max-width:950px) {
-    .checkout_page{
+    /* .checkout_page{
         height: 100dvh;
         width: 100%;
         padding: 15% 0;
-    }
+    } */
     .checkout_page form{
         width: 60%;
     }
 }
 @media screen and (max-width:820px) {
-    .checkout_page{
+    /* .checkout_page{
         padding: 40% 0;
-    }
+    } */
     .checkout_page form{
         width: 90%;
         padding: 4% 4%;

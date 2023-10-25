@@ -53,11 +53,11 @@ const Navbar = () => {
             }
           </li>
 
-          <li className='nav-item'>
+          {/* <li className='nav-item'>
             {
               token? null : <Link to={'/signup'} className={`btn ${context.theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'}`}>Register <i className="fa-solid fa-user-plus"></i></Link>
             }
-          </li>
+          </li> */}
 
           <li className='nav-item'>
             <Link to={'/cart'} className={`btn btn-outline-dark cart-li`}><i className="fa-solid fa-cart-shopping"></i>
