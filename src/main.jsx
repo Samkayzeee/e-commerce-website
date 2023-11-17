@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { Provider } from 'react-redux';
 import Loading from './components/loading/Loading';
-import store from './redux/store';
+import {store, persistor} from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Checkout from './pages/checkout/Checkout';
 import AmountProviderContext from './contexts/AmountPay';
@@ -41,7 +42,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AmountProviderContext>
     <Suspense fallback={<Loading />}>
       <Provider store={store}>
-        <RouterProvider router={router} />
+        <PersistGate loading={null} persistor={persistor}>
+            <RouterProvider router={router} />
+        </PersistGate>
       </Provider>
     </Suspense>
     </AmountProviderContext>
