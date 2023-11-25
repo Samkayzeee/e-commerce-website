@@ -4,6 +4,7 @@ import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 import rootReducer from "./reducer";
+import thunk from "redux-thunk";
 
 
 
@@ -22,12 +23,10 @@ const persistConfig = {
   storage
 };
 
-
-
-
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer
+  reducer: persistedReducer,
+  middleware: [thunk]
 })
 export const persistor = persistStore(store);
