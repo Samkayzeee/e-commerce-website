@@ -1,6 +1,6 @@
 .cart{
     padding: 4% 6%;
-    animation: fadein;
+    /* animation: fadein; */
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     transition: all .3s;
@@ -13,9 +13,16 @@
         transform: scale(1, 1);
     }
 }
+.empty-cart-div{
+    display: flex;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+
+}
 .empty-cart{
     text-align: center;
-    padding: 18% 0;
+    /* border: solid 2px red; */
 }
 .empty-cart h1{
     margin: 2% 0;

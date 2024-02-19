@@ -7,9 +7,9 @@
     background-position: center;
     background-size: cover;
     transition: all .3s;
-    animation: fadein;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
+    /* animation: fadein; */
+    /* animation-duration: 1.5s;
+    animation-fill-mode: forwards; */
 }
 @keyframes fadein {
     0%{

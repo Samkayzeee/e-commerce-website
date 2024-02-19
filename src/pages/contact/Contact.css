@@ -1,8 +1,8 @@
 .contact-container{
     padding: 2% 4%;
-    animation: scalein;
-    animation-fill-mode: forwards;
-    animation-duration: 1.5s;
+    /* animation: scalein; */
+    /* animation-fill-mode: forwards;
+    animation-duration: 1.5s; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */

@@ -34,11 +34,13 @@ const Cart = () => {
     const EmptyCart = () => {
          return(
             <>
+            <div className="empty-cart-div">
                <div className={darkmodeContext.theme === 'light' ? "empty-cart" : "empty-cart cart-darkmode"}>
-                  <h1> Your Cart is empty.. </h1>
-                  <h1> Go back to products page to shop some items..</h1>
-                  <Link className={`btn ${darkmodeContext.theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'}`} to={'/products'}> Go to Products Page </Link>
-               </div>
+                     <h1> Your Cart is empty.. </h1>
+                     <h1> Go back to products page to shop some items..</h1>
+                     <Link className={`btn ${darkmodeContext.theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'}`} to={'/products'}> Go to Products Page </Link>
+                  </div>
+            </div> 
             </>
          )
     }
