@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Kanit&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 *{
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
