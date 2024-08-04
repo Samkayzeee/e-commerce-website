@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { ThemeContext } from "../../contexts/ThemeProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const ContactPage = () => {
     // ref
@@ -69,34 +70,57 @@ const ContactPage = () => {
     return ( 
             <DefaultLayout>
                 <div className="contact-container" style={{color: context.theme === 'light' ? null : '#FFF'}}>
-                    <h1>Contact Us</h1>
-                    <h2>Get in Touch</h2>
-
-                <form ref={formRef} action="" className={context.theme === 'light' ? "contact-form" : "contact-form darkmode-contact-form"} onSubmit={sendmail}>
-
-                    <input type="text" name="name" id="" placeholder="Your Name" required/>
-
-                    <input ref={EmailRef} type="email" onBlur={validEMail} name="email" id="" placeholder="Your Email" required/>
-                    {!isEmailValid && <p style={{color:"red"}}>Please enter a valid email address</p>}
-
-                    <input type="text" name="subject" id="subject" placeholder="Subject" required/>
-
-                    <textarea name="message" id="" cols={30} rows={10} placeholder="Message" required></textarea>
-
-                    {
-                        loading ? <Loading /> : <p style={{color: successful ?  "rgb(100, 195, 100)" : "red"}} className="message">{message}</p>
-                    }
-
-                    <button className={`btn ${context.theme === 'light' ? "btn-outline-dark" : "btn-outline-light"}`} type="submit">Send Message</button>
-                </form>
-
-                    <div className="contact-information" style={{color: context.theme === 'light' ? null : '#FFF'}}>
-                        <h2>Contact Informations</h2>
-                    <ol>
-                        <li> <span>Phone: </span>+2347019665230</li>
-                        <li> <span>Email: </span>lasisiabdulsamad7@gmail.com</li>
-                    </ol>
+                    {/* first section */}
+                    <div className="h-96 flex items-end py-14" 
+                    style={{
+                        background:"linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url('/assets/Phone_Hold.jpg')",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        backgroundAttachment: "fixed"
+                    }}
+                    >
+                        <div className="mx-auto text-center">
+                           <p className="text-neutral-400 text-base font-semibold"> HOME <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i> CONTACT US <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i></p>
+                           <h1 className="text-white font-thin" style={{fontSize: "60px"}}>Contact Us</h1>
+                        </div>
                     </div>
+
+                    {/* second section */}
+                    <div className="flex justify-evenly text-center py-16">
+                        {/* <div>
+                            <div className="w-28 h-28 flex items-center justify-center mx-auto border border-solid rounded-full my-4 bg-red-700 text-white">
+                                logo
+                            </div>
+
+                            <p><span className="font-bold">Address: </span> Null </p>
+                        </div> */}
+
+                        <div>
+                            <div className="w-28 h-28 flex items-center justify-center mx-auto border border-solid rounded-full my-4 bg-red-700 text-white">
+                                <i className='bx bxs-phone text-4xl'></i>
+                            </div>
+
+                            <p> <span className="font-bold">Phone: </span> +2347019665230 </p>
+                        </div>
+
+                        <div>
+                            <div className="w-28 h-28 flex items-center justify-center mx-auto border border-solid rounded-full my-4 bg-red-700 text-white">
+                                <i className='bx bxs-paper-plane text-4xl'></i>
+                            </div>
+                            <p> <span className="font-bold">Email: </span> <Link to={'mailto:lasisiabdulsamad7@gmail.com'} className="text-red-700 no-underline hover:text-red-600" target="blank"> lasisiabdulsamad7@gmail.com </Link> </p>
+                        </div>
+
+                        <div>
+                            <div className="w-28 h-28 flex items-center justify-center mx-auto border border-solid rounded-full my-4 bg-red-700 text-white">
+                                <i className='bx bx-world text-4xl'></i>
+                            </div>
+                            <p> <span className="font-bold">Website/Porfolio: </span>  <Link to={'https://samkayzee-portfolio.vercel.app/'} target="blank" className="text-red-700 no-underline hover:text-red-600"> Website </Link> </p>
+                        </div>
+
+                    </div>
+
+                {/* third section */}
+
                 </div>
             </DefaultLayout>
      );
