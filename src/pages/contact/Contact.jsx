@@ -121,6 +121,20 @@ const ContactPage = () => {
 
                 {/* third section */}
 
+                <div>
+                    <div
+                    className="h-60"
+                    style={{
+                        background: "url('/assets/Phone_Hold.jpg')",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+
+                    }}
+                    >
+
+                    </div>
+                </div>
+
                 </div>
             </DefaultLayout>
      );
