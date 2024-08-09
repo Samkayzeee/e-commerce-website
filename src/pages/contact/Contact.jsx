@@ -69,7 +69,7 @@ const ContactPage = () => {
 
     return ( 
             <DefaultLayout>
-                <div className="contact-container" style={{color: context.theme === 'light' ? null : '#FFF'}}>
+                <div className={`contact-container ${ context.theme === 'light' ? 'bg-gray-100':'bg-black' } `} style={{color: context.theme === 'light' ? null : '#FFF'}} >
                     {/* first section */}
                     <div className="h-96 flex items-end py-14" 
                     style={{
@@ -121,9 +121,9 @@ const ContactPage = () => {
 
                 {/* third section */}
 
-                <div>
+                <div className="flex w-4/5 mx-auto bg-white">
                     <div
-                    className="h-60"
+                    className="w-1/2"
                     style={{
                         background: "url('/assets/Phone_Hold.jpg')",
                         backgroundPosition: "center",
@@ -132,6 +132,35 @@ const ContactPage = () => {
                     }}
                     >
 
+                    </div>
+
+                    <div className="w-1/2 py-8 px-6">
+                        <form action="">
+                            <div className="flex justify-between my-4">
+                                <div>
+                                    <label htmlFor="FullName" className="block mb-4 text-red-700 text-sm">FULL NAME</label>
+                                    <input type="text" name="FullName"  className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Name"/>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="Email" className="block mb-4 text-red-700 text-sm">EMAIL ADDRESS</label>
+                                    <input type="email" name="Email" className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Email"/>
+                                </div>
+                            </div>
+
+                            <div className="my-4">
+                                <label htmlFor="Subject" className="block mb-4 text-red-700 text-sm">SUBJECT</label>
+                                <input type="text" name="Subject" id="" className="w-full text-sm bg-transparent border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Subject"/>
+                            </div>
+
+                            <div className="my-4">
+                                <label htmlFor="Textarea" className="block mb-4 text-red-700 text-sm">MESSAGE</label>
+                                <textarea name="" id="" cols="30" rows="3" className="w-full text-sm bg-transparent border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Message"></textarea>
+                            </div>
+
+                            <button className="py-2.5 rounded-sm text-white font-semibold px-4 bg-red-700"> Send Message </button>
+                            
+                        </form>
                     </div>
                 </div>
 
