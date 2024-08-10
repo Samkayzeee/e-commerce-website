@@ -1,5 +1,4 @@
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
-import './Contact.css';
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { ThemeContext } from "../../contexts/ThemeProvider";
@@ -61,18 +60,9 @@ const ContactPage = () => {
     }
 
 
-    const Loading = () => {
-        return (
-            <div className="loadingio-spinner-rolling-vc8zers97pd"><div className="ldio-zlxdtiiq8cb">
-            <div></div>
-            </div></div>
-        )
-    }
-
-
     return ( 
             <DefaultLayout>
-                <div className={`contact-container ${ context.theme === 'light' ? 'bg-gray-100':'bg-black' } `} style={{color: context.theme === 'light' ? null : '#FFF'}} >
+                <div className={`contact-container ${ context.theme === 'light' ? 'bg-gray-50':'bg-black' } pb-14`} style={{color: context.theme === 'light' ? null : '#FFF'}} >
                     {/* first section */}
                     <div className="h-96 flex items-end py-14" 
                     style={{
@@ -84,19 +74,12 @@ const ContactPage = () => {
                     >
                         <div className="mx-auto text-center">
                            <p className="text-neutral-400 text-base font-semibold"> HOME <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i> CONTACT US <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i></p>
-                           <h1 className="text-white font-thin" style={{fontSize: "60px"}}>Contact Us</h1>
+                           <h1 className="text-white font-extrabold" style={{fontSize: "60px"}}>Contact Us</h1>
                         </div>
                     </div>
 
                     {/* second section */}
                     <div className="flex md:flex-row flex-col justify-evenly text-center py-16">
-                        {/* <div>
-                            <div className="w-28 h-28 flex items-center justify-center mx-auto border border-solid rounded-full my-4 bg-red-700 text-white">
-                                logo
-                            </div>
-
-                            <p><span className="font-bold">Address: </span> Null </p>
-                        </div> */}
 
                         <div>
                             <div className="w-28 h-28 flex items-center justify-center mx-auto border border-solid rounded-full my-4 bg-red-700 text-white">
@@ -124,7 +107,7 @@ const ContactPage = () => {
 
                 {/* third section */}
 
-                <div className="flex md:flex-row flex-col-reverse md:w-4/5 w-full mx-auto  bg-white">
+                <div className="flex md:flex-row flex-col-reverse md:w-4/5 w-full mx-auto bg-white">
                     <div className="md:w-1/2 w-full">
                         <img src={Phone_Holding} alt="Phone Hold" className="md:h-full h-96 w-full"/>
                     </div>
@@ -134,12 +117,12 @@ const ContactPage = () => {
                             <div className="md:flex justify-between my-4">
                                 <div className="md:w-5/12 w-full my-4 md:my-0">
                                     <label htmlFor="FullName" className="block mb-4 text-red-700 text-sm">FULL NAME</label>
-                                    <input type="text" name="FullName"  className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Name"/>
+                                    <input type="text" name="FullName" required className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Name"/>
                                 </div>
 
                                 <div className="my-4 md:my-0 md:w-5/12 w-full">
                                     <label htmlFor="Email" className="block mb-4 text-red-700 text-sm">EMAIL ADDRESS</label>
-                                    <input type="email" name="Email" className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Email"/>
+                                    <input type="email" name="Email" required className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Email"/>
                                 </div>
                             </div>
 
@@ -150,7 +133,7 @@ const ContactPage = () => {
 
                             <div className="my-4">
                                 <label htmlFor="Textarea" className="block mb-4 text-red-700 text-sm">MESSAGE</label>
-                                <textarea name="" id="" cols="30" rows="3" className="w-full text-sm bg-transparent border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Message"></textarea>
+                                <textarea name="" id="" cols="30" rows="3" required className="w-full resize-none text-sm bg-transparent border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Message"></textarea>
                             </div>
 
                             <button className="py-2.5 rounded-md text-white font-semibold px-4 bg-red-700"> Send Message </button>
