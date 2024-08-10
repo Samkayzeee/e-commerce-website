@@ -6,6 +6,9 @@ import { ThemeContext } from "../../contexts/ThemeProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
+
+import Phone_Holding from "/assets/Phone_Hold.jpg";
+
 const ContactPage = () => {
     // ref
     const formRef = useRef(null);
@@ -86,7 +89,7 @@ const ContactPage = () => {
                     </div>
 
                     {/* second section */}
-                    <div className="flex justify-evenly text-center py-16">
+                    <div className="flex md:flex-row flex-col justify-evenly text-center py-16">
                         {/* <div>
                             <div className="w-28 h-28 flex items-center justify-center mx-auto border border-solid rounded-full my-4 bg-red-700 text-white">
                                 logo
@@ -121,30 +124,22 @@ const ContactPage = () => {
 
                 {/* third section */}
 
-                <div className="flex w-4/5 mx-auto bg-white">
-                    <div
-                    className="w-1/2"
-                    style={{
-                        background: "url('/assets/Phone_Hold.jpg')",
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-
-                    }}
-                    >
-
+                <div className="flex md:flex-row flex-col-reverse md:w-4/5 w-full mx-auto  bg-white">
+                    <div className="md:w-1/2 w-full">
+                        <img src={Phone_Holding} alt="Phone Hold" className="md:h-full h-96 w-full"/>
                     </div>
 
-                    <div className="w-1/2 py-8 px-6">
+                    <div className="md:w-1/2 w-full py-8 px-6">
                         <form action="">
-                            <div className="flex justify-between my-4">
-                                <div>
+                            <div className="md:flex justify-between my-4">
+                                <div className="md:w-5/12 w-full my-4 md:my-0">
                                     <label htmlFor="FullName" className="block mb-4 text-red-700 text-sm">FULL NAME</label>
-                                    <input type="text" name="FullName"  className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Name"/>
+                                    <input type="text" name="FullName"  className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Name"/>
                                 </div>
 
-                                <div>
+                                <div className="my-4 md:my-0 md:w-5/12 w-full">
                                     <label htmlFor="Email" className="block mb-4 text-red-700 text-sm">EMAIL ADDRESS</label>
-                                    <input type="email" name="Email" className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Email"/>
+                                    <input type="email" name="Email" className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Email"/>
                                 </div>
                             </div>
 
@@ -158,7 +153,7 @@ const ContactPage = () => {
                                 <textarea name="" id="" cols="30" rows="3" className="w-full text-sm bg-transparent border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Message"></textarea>
                             </div>
 
-                            <button className="py-2.5 rounded-sm text-white font-semibold px-4 bg-red-700"> Send Message </button>
+                            <button className="py-2.5 rounded-md text-white font-semibold px-4 bg-red-700"> Send Message </button>
                             
                         </form>
                     </div>
