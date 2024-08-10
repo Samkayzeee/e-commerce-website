@@ -62,7 +62,7 @@ const ContactPage = () => {
 
     return ( 
             <DefaultLayout>
-                <div className={`contact-container ${ context.theme === 'light' ? 'bg-gray-50':'bg-black' } pb-14`} style={{color: context.theme === 'light' ? null : '#FFF'}} >
+                <div className={`${ context.theme === 'light' ? 'bg-gray-50':'bg-black' } pb-14`} style={{color: context.theme === 'light' ? null : '#FFF'}} >
                     {/* first section */}
                     <div className="h-96 flex items-end py-14" 
                     style={{

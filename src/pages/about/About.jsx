@@ -3,23 +3,82 @@ import './About.css';
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeProvider";
 
+import cyber_shopping from "/assets/cyber-shopping-sales.jpg";
+
+
+const support = [
+     {
+          title:"ONLINE SUPPORT 24/7",
+          content:"Get help anytime, anywhere with our 24/7 online support, always here to assist you."
+     },
+     {
+          title:"MONEY BACK GUARANTEE",
+          content:"Shop with confidence—our 100% Money Back Guarantee ensures your satisfaction or your money back, no questions asked."
+     },
+     {
+          title:"FREE SHIPPING AND RETURN",
+          content:"Enjoy free shipping and hassle-free returns on all your purchases."
+     }
+];
+
+
 const AboutPage = () => {
      const context = useContext(ThemeContext);
     return ( 
             <DefaultLayout>
-               <div className="about">
-               <div className="section1">
+               <main className="about">
 
-               </div>
-               <div className="details" style={{color: context.theme === 'light' ? null : '#FFF'}}>
-               <h2>About Us</h2>
-                    <p>Welcome to Samkayzee Products, where we're passionate about providing our customers with the best shopping experience possible. Our company was founded on the principle of putting customers first, and we strive to maintain that philosophy every day.</p>
-                    <p>Our mission is simple: to offer high-quality products at affordable prices while providing top-notch customer service. We believe that everyone deserves to have access to the latest trends and styles, which is why we're always adding new items to our inventory.</p>
-                    <p>At Your Samkayzee Products, we're more than just an e-commerce store. We're a community of like-minded individuals who share a passion for fashion and style. Our team is made up of dedicated professionals who are committed to making your shopping experience enjoyable and stress-free.</p>
-                    <p>Whether you're shopping for yourself or looking for the perfect gift, we've got you covered. Our extensive selection of products includes everything from clothing and accessories to home decor and beauty products. We carefully curate our inventory to ensure that every item meets our high standards of quality and style.</p>
-                    <p>Thank you for choosing Samkayzee Products. We're confident that you'll love our products and our service, and we look forward to serving you for years to come.</p>
-               </div>
-               </div>
+               {/* section 1 */}
+               <div className="h-96 flex items-end py-14" 
+                    style={{
+                        background:"linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url('/assets/Phone_Hold.jpg')",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        backgroundAttachment: "fixed"
+                    }}
+                    >
+                        <div className="mx-auto text-center">
+                           <p className="text-neutral-400 text-base font-semibold"> HOME <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i> ABOUT US <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i></p>
+                           <h1 className="text-white font-extrabold" style={{fontSize: "60px"}}> About Us </h1>
+                        </div>
+                    </div>
+
+
+                    {/* section 2 */}
+                    <div className="flex justify-center bg-orange-800">
+                         {
+                              support.map((support, index) => {
+                                   return(
+                                        <div key={index} className="w-1/4 py-8 px-5 border-s border-r border-white bg-orange-900 text-white">
+                                             <h2 className="font-extrabold text-lg"> { support.title } </h2>
+                                             <p className="text-sm leading-7"> { support.content } </p>
+                                        </div>
+                                   )
+                              })
+                         }
+                    </div>
+
+                    {/* section 3 */}
+
+                    <div className="flex w-4/5 mx-auto py-14 items-center">
+                         <div className="w-1/2">
+                              <img src={cyber_shopping} alt="Cyber Shopping Image" />
+                         </div>
+
+                         <div className="p-10 w-1/2">
+                              <h6 className="text-orange-700 text-sm">Since 2023</h6>
+                              <p className="leading-8 my-4 text-gray-500">
+                                   Welcome to Samkayzee E-commerce Website, a project-driven online store created in 2023 with a passion for learning and innovation.
+                                   This website was developed as part of a hands-on project to explore the dynamic world of e-commerce, web design, and digital customer experiences.
+                              </p>
+
+                              <p className="leading-8 my-4 text-gray-500">
+                                   While our products and services are designed to offer a real-world feel, this platform primarily serves as a learning tool, reflecting the skills and creativity gained over the past year. 
+                                   Thank you for visiting and supporting this journey of continuous growth and discovery.
+                              </p>
+                         </div>
+                    </div>
+               </main>
             </DefaultLayout>
      );
 }
