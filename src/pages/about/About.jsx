@@ -1,5 +1,4 @@
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
-import './About.css';
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeProvider";
 
@@ -68,27 +67,29 @@ const AboutPage = () => {
 
 
                     {/* section 2 */}
-                    <div className="flex justify-center bg-orange-800">
-                         {
-                              support.map((support, index) => {
+                    <div className="bg-orange-800">
+                         <div className="md:flex justify-center md:w-full w-4/5 mx-auto">
+                              {
+                                   support.map((support, index) => {
                                    return(
-                                        <div key={index} className="w-1/4 py-8 px-5 border-s border-r border-white bg-orange-900 text-white">
+                                        <div key={index} className="md:w-1/4 py-14 mb-3 md:mb-0 px-5 border-s border-r border-white bg-orange-900 text-white">
                                              <h2 className="font-extrabold text-lg"> { support.title } </h2>
                                              <p className="text-sm leading-7"> { support.content } </p>
                                         </div>
                                    )
                               })
-                         }
+                              }
+                         </div>
                     </div>
 
                     {/* section 3 */}
 
-                    <div className="flex w-4/5 mx-auto py-14 items-center">
-                         <div className="w-1/2">
+                    <div className="md:flex w-4/5 mx-auto py-14 items-center">
+                         <div className="md:w-1/2">
                               <img src={cyber_shopping} alt="Cyber Shopping Image" />
                          </div>
 
-                         <div className="p-10 w-1/2">
+                         <div className="p-10 md:w-1/2">
                               <h6 className="text-orange-700 text-sm">Since 2023</h6>
 
                               <h2 className="my-4 font-bold">About.</h2>
@@ -106,11 +107,11 @@ const AboutPage = () => {
                     </div>
 
                     {/* section 4 */}
-                    <div className="flex justify-between items-center py-10">
+                    <div className="flex justify-between md:flex-row flex-col items-center py-10">
                          {
                               products.map((product, index) => {
                                    return(
-                                        <div className="w-1/6" key={index}>
+                                        <div className="md:w-1/6 my-4 md:my-0" key={index}>
                                              <div className="p-2 w-fit border-2 border-orange-800 rounded-full mx-auto">
                                                   {/* <img src={product.img_url} alt={product.name} className="rounded-full"/> */}
                                                   <div
