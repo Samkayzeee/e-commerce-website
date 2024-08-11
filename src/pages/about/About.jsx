@@ -22,11 +22,34 @@ const support = [
 ];
 
 
+const products = [
+     {
+          name:"Men Wears",
+          img_url:"/assets/first_men_wear.jpg"
+     },
+     {
+          name:"Men Wears",
+          img_url:"/assets/second_men_wear.jpg"
+     },
+     {
+          name:"Women Wears",
+          img_url:"/assets/first_women_wear.jpg"
+     },
+     {
+          name:"Women Wears",
+          img_url:"/assets/second_women_wear.jpg"
+     },
+     {
+          name:"Ladies Jewelry",
+          img_url:"/assets/first_jewelry.jpg"
+     }
+];
+
 const AboutPage = () => {
      const context = useContext(ThemeContext);
     return ( 
             <DefaultLayout>
-               <main className="about">
+               <main className={`${ context.theme === 'light' ? 'bg-gray-50':'bg-black' } pb-14`} style={{color: context.theme === 'light' ? null : '#FFF'}}>
 
                {/* section 1 */}
                <div className="h-96 flex items-end py-14" 
@@ -67,6 +90,9 @@ const AboutPage = () => {
 
                          <div className="p-10 w-1/2">
                               <h6 className="text-orange-700 text-sm">Since 2023</h6>
+
+                              <h2 className="my-4 font-bold">About.</h2>
+
                               <p className="leading-8 my-4 text-gray-500">
                                    Welcome to Samkayzee E-commerce Website, a project-driven online store created in 2023 with a passion for learning and innovation.
                                    This website was developed as part of a hands-on project to explore the dynamic world of e-commerce, web design, and digital customer experiences.
@@ -78,6 +104,42 @@ const AboutPage = () => {
                               </p>
                          </div>
                     </div>
+
+                    {/* section 4 */}
+                    <div className="flex justify-between items-center py-10">
+                         {
+                              products.map((product, index) => {
+                                   return(
+                                        <div className="w-1/6" key={index}>
+                                             <div className="p-2 w-fit border-2 border-orange-800 rounded-full mx-auto">
+                                                  {/* <img src={product.img_url} alt={product.name} className="rounded-full"/> */}
+                                                  <div
+                                                  className="h-32 rounded-full w-32 border cursor-pointer transition-all ease-in-out hover:scale-110"
+                                                  style={{
+                                                       background:`url(${product.img_url})`,
+                                                       backgroundPosition: "center",
+                                                       backgroundSize: "contain",
+                                                       backgroundRepeat: "no-repeat"
+                                                  }}
+                                                  >
+
+                                                  </div>
+                                             </div>
+                                             <h2 className="text-center font-thin text-lg"> { product.name } </h2>
+                                        </div>
+                                   )
+                              })
+                         }
+                    </div>
+
+                    {/* section 5 */}
+                    
+                    {/* <div className="py-16">
+                         <h5 className="text-center text-sm">Testimonial</h5>
+                         <h2 className="text-center font-semibold">Happy Clients</h2>
+                    </div> */}
+                   
+
                </main>
             </DefaultLayout>
      );
