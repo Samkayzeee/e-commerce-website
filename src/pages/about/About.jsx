@@ -48,7 +48,7 @@ const AboutPage = () => {
      const context = useContext(ThemeContext);
     return ( 
             <DefaultLayout>
-               <main className={`${ context.theme === 'light' ? 'bg-gray-50':'bg-black' } pb-14`} style={{color: context.theme === 'light' ? null : '#FFF'}}>
+               <main className={`${ context.theme === 'light' ? 'bg-gray-50 text-black':'bg-black text-white' } pb-14`} >
 
                {/* section 1 */}
                <div className="h-96 flex items-end py-14" 
@@ -131,15 +131,7 @@ const AboutPage = () => {
                                    )
                               })
                          }
-                    </div>
-
-                    {/* section 5 */}
-                    
-                    {/* <div className="py-16">
-                         <h5 className="text-center text-sm">Testimonial</h5>
-                         <h2 className="text-center font-semibold">Happy Clients</h2>
-                    </div> */}
-                   
+                    </div>                   
 
                </main>
             </DefaultLayout>
