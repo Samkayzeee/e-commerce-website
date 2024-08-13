@@ -105,7 +105,7 @@ const Navbar = () => {
 
       </ul>
     </div>
-    <Link to={'/'} className="btn btn-ghost text-xl text-red-700">SAMKAYZEE.</Link>
+    <Link to={'/'} className="btn btn-ghost text-xl text-orange-800">SAMKAYZEE.</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -153,7 +153,7 @@ const Navbar = () => {
         className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
         <div className="card-body">
           {
-            cartLength.length === 0 ? <span className="text-sm font-semibold"> No Items Available. </span> : <span className="text-lg font-bold">{cartLength.length} Items</span>
+            cartLength.length === 0 ? <span className="text-sm font-semibold text-white"> No Items Available. </span> : <span className="text-lg font-bold">{cartLength.length} Items</span>
           }
           {/* <span className="text-info">Subtotal: $999</span> */}
           <div className="card-actions">

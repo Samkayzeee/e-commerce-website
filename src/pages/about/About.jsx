@@ -3,46 +3,11 @@ import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeProvider";
 
 import cyber_shopping from "/assets/cyber-shopping-sales.jpg";
+import Support from "../../components/support/Support";
+import Few_Products from "../../components/few_products/Few_Products";
 
 
-const support = [
-     {
-          title:"ONLINE SUPPORT 24/7",
-          content:"Get help anytime, anywhere with our 24/7 online support, always here to assist you."
-     },
-     {
-          title:"MONEY BACK GUARANTEE",
-          content:"Shop with confidence—our 100% Money Back Guarantee ensures your satisfaction or your money back, no questions asked."
-     },
-     {
-          title:"FREE SHIPPING AND RETURN",
-          content:"Enjoy free shipping and hassle-free returns on all your purchases."
-     }
-];
 
-
-const products = [
-     {
-          name:"Men Wears",
-          img_url:"/assets/first_men_wear.jpg"
-     },
-     {
-          name:"Men Wears",
-          img_url:"/assets/second_men_wear.jpg"
-     },
-     {
-          name:"Women Wears",
-          img_url:"/assets/first_women_wear.jpg"
-     },
-     {
-          name:"Women Wears",
-          img_url:"/assets/second_women_wear.jpg"
-     },
-     {
-          name:"Ladies Jewelry",
-          img_url:"/assets/first_jewelry.jpg"
-     }
-];
 
 const AboutPage = () => {
      const context = useContext(ThemeContext);
@@ -67,21 +32,8 @@ const AboutPage = () => {
 
 
                     {/* section 2 */}
-                    <div className="bg-orange-800">
-                         <div className="md:flex justify-center md:w-full w-4/5 mx-auto">
-                              {
-                                   support.map((support, index) => {
-                                   return(
-                                        <div key={index} className="md:w-1/4 py-14 mb-3 md:mb-0 px-5 border-s border-r border-white bg-orange-900 text-white">
-                                             <h2 className="font-extrabold text-lg"> { support.title } </h2>
-                                             <p className="text-sm leading-7"> { support.content } </p>
-                                        </div>
-                                   )
-                              })
-                              }
-                         </div>
-                    </div>
-
+                    
+                    <Support />
                     {/* section 3 */}
 
                     <div className="md:flex w-4/5 mx-auto py-14 items-center">
@@ -106,32 +58,8 @@ const AboutPage = () => {
                          </div>
                     </div>
 
-                    {/* section 4 */}
-                    <div className="flex justify-between md:flex-row flex-col items-center py-10">
-                         {
-                              products.map((product, index) => {
-                                   return(
-                                        <div className="md:w-1/6 my-4 md:my-0" key={index}>
-                                             <div className="p-2 w-fit border-2 border-orange-800 rounded-full mx-auto">
-                                                  {/* <img src={product.img_url} alt={product.name} className="rounded-full"/> */}
-                                                  <div
-                                                  className="h-32 rounded-full w-32 border cursor-pointer transition-all ease-in-out hover:scale-110"
-                                                  style={{
-                                                       background:`url(${product.img_url})`,
-                                                       backgroundPosition: "center",
-                                                       backgroundSize: "contain",
-                                                       backgroundRepeat: "no-repeat"
-                                                  }}
-                                                  >
-
-                                                  </div>
-                                             </div>
-                                             <h2 className="text-center font-thin text-lg"> { product.name } </h2>
-                                        </div>
-                                   )
-                              })
-                         }
-                    </div>                   
+                    {/* section 4 */}   
+                    <Few_Products />        
 
                </main>
             </DefaultLayout>

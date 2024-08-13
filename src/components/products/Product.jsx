@@ -56,19 +56,19 @@ const Product = () => {
                 <button><Skeleton className='btn' height={40} width={90}/></button>
             </div>
                 <div className="product-loading">
-                    <div className="loading">
+                    <div className="">
                         <Skeleton height={350} width={"100%"}/>
                     </div>
 
-                    <div className="loading">
+                    <div className="">
                         <Skeleton height={350} width={"100%"}/>
                     </div>
 
-                    <div className="loading">
+                    <div className="">
                         <Skeleton height={350} width={"100%"}/>
                     </div>
 
-                    <div className="loading">
+                    <div className="">
                         <Skeleton height={350} width={"100%"}/>
                     </div>
                 </div> 
