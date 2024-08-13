@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom';
-import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useContext } from 'react';
@@ -68,7 +67,7 @@ const Navbar = () => {
   </div>
 </nav> */}
 
-<div className={`navbar bg-base-100 sticky top-0`}>
+<div className={`navbar sticky top-0 ${context.theme === 'light' ? 'bg-gray-500/30 text-black' : 'bg-black/30 text-white'} backdrop-blur-xl z-10`}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -89,45 +88,46 @@ const Navbar = () => {
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li>
-          <NavLink exact='true' className="" aria-current="page" to={'/'} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Home</NavLink>
+          <NavLink exact='true' className="text-base font-bold" aria-current="page" to={'/'} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Home</NavLink>
         </li>
 
         <li> 
-          <NavLink to={'/products'} className="" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Products</NavLink> 
+          <NavLink to={'/products'} className="text-base font-bold" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Products</NavLink> 
         </li>
 
         <li>
-          <NavLink to={'/about'} className="nav-link" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >About</NavLink>
+          <NavLink to={'/about'} className="text-base font-bold" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >About</NavLink>
         </li>
 
         <li>
-          <NavLink to={'/contact'} className="nav-link" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Contacts</NavLink>
+          <NavLink to={'/contact'} className="text-base font-bold" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Contacts</NavLink>
         </li>
 
       </ul>
     </div>
-    <Link to={'/'} className="btn btn-ghost text-xl">SAMKAYZEE.</Link>
+    <Link to={'/'} className="btn btn-ghost text-xl text-red-700">SAMKAYZEE.</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       <li>
-        <NavLink exact='true' className="" aria-current="page" to={'/'} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Home</NavLink>
+        <NavLink exact='true' className={`text-base font-bold ${context.theme === 'light' ? 'text-black' : 'text-white'}`} aria-current="page" to={'/'} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null})} >Home</NavLink>
       </li>
 
       <li> 
-        <NavLink to={'/products'} className="" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Products</NavLink> 
+        <NavLink to={'/products'} className={`text-base font-bold ${context.theme === 'light' ? 'text-black' : 'text-white'}`} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null})} >Products</NavLink> 
       </li>
 
       <li>
-        <NavLink to={'/about'} className="nav-link" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >About</NavLink>
+        <NavLink to={'/about'}className={`text-base font-bold ${context.theme === 'light' ? 'text-black' : 'text-white'}`} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null})} >About</NavLink>
       </li>
 
       <li>
-        <NavLink to={'/contact'} className="nav-link" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Contacts</NavLink>
+        <NavLink to={'/contact'} className={`text-base font-bold ${context.theme === 'light' ? 'text-black' : 'text-white'}`} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null})} >Contacts</NavLink>
       </li>
     </ul>
   </div>
   <div className="navbar-end">
+    {/* cart implementation */}
   <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
         <div className="indicator">
@@ -143,7 +143,9 @@ const Navbar = () => {
               strokeWidth="2"
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
-          <span className="badge badge-sm indicator-item"> {cartLength.length} </span>
+              {
+                cartLength.length === 0 ? null : <span className="badge badge-sm indicator-item">{cartLength.length}</span>
+              }
         </div>
       </div>
       <div
@@ -151,11 +153,11 @@ const Navbar = () => {
         className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
         <div className="card-body">
           {
-            cartLength.length === 0 ? null : <span className="text-lg font-bold">{cartLength.length} Items</span>
+            cartLength.length === 0 ? <span className="text-sm font-semibold"> No Items Available. </span> : <span className="text-lg font-bold">{cartLength.length} Items</span>
           }
-          <span className="text-info">Subtotal: $999</span>
+          {/* <span className="text-info">Subtotal: $999</span> */}
           <div className="card-actions">
-            <button className="btn btn-primary btn-block">View cart</button>
+            <Link className="btn btn-primary btn-block" to={'/cart'}>View cart</Link>
           </div>
         </div>
       </div>

@@ -84,8 +84,8 @@ const Cart = () => {
                   <div className="btn">
                      <button onClick={() => {
                         context.setAmount(total);
-                        dispatch(handleCart.clearItem());
                         navigate('/checkout');
+                        dispatch(handleCart.clearItem());
                      }}>Proceed to Checkout</button>
                   </div>
 
