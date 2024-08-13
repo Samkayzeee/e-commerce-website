@@ -8,6 +8,12 @@ export default {
     extend: {
       lineHeight: {
         60:"70px"
+      },
+      width:{
+        "30percent": "30%"
+      },
+      height:{
+        100:"400px"
       }
     },
   },

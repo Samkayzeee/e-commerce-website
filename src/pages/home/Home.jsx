@@ -7,6 +7,22 @@ import Few_Products from "../../components/few_products/Few_Products";
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeProvider";
 
+
+const collections = [
+    {
+        type:"Women",
+        img_url: "/assets/home/home_ladies_clothing.jpg"
+    },
+    {
+        type:"Jewelry",
+        img_url: "/assets/home/home_jewelry.png"
+    },
+    {
+        type:"Men",
+        img_url: "/assets/home/home_men_clothing.jpg"
+    }
+];
+
 const HomePage = () => {
     const context = useContext(ThemeContext);
 
@@ -37,7 +53,7 @@ const HomePage = () => {
 
                 {/* second section */}
 
-                <div className="flex justify-center text-black py-20">
+                <div className="flex justify-center py-20">
                     <div className="w-2/5 h-96">
                         <img src={cloth} alt="cloth pic" className="h-full"/>
                     </div>
@@ -48,7 +64,7 @@ const HomePage = () => {
                             Explore a curated selection of products that perfectly complements your style. Find the ideal pieces to elevate your look for any occasion.
                         </p>
 
-                        <Link to={'/'} className="btn border-0 bg-orange-800 hover:bg-orange-900 text-white">Shop Now</Link>
+                        <Link to={'/products'} className="btn border-0 bg-orange-800 hover:bg-orange-900 text-white">Shop Now</Link>
                     </div>
                 </div>
 
@@ -63,6 +79,36 @@ const HomePage = () => {
 
 
                 {/* fifth section */}
+                    <div className="flex justify-between p-24 border-y border-y-gray-400">
+                        {
+                            collections.map((collection, index) => {
+                                return(
+                                    <div key={index}
+                                    className="w-[30%] h-[400px] p-6 flex items-end cursor-pointer transition-all duration-150 ease-in-out hover:scale-105"
+                                    style={{
+                                        background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url(${collection.img_url})`,
+                                        backgroundPosition: "center",
+                                        backgroundSize: "cover",
+                                        // backgroundAttachment: "fixed"
+                                    }}
+                                    >
+                                    <div>
+                                        <h4 className="text-sm font-bold text-white"> COLLECTIONS </h4>
+                                        <h3 className="text-3xl font-bold text-white"> { collection.type } </h3>
+                                    </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+
+                     {/* sixth section */}
+                    <div>
+                        <h2>Featured Products</h2>
+                        <div>
+                            
+                        </div>
+                    </div>
 
             </main>
         </DefaultLayout>

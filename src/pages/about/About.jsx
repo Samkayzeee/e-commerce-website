@@ -38,7 +38,7 @@ const AboutPage = () => {
 
                     <div className="md:flex w-4/5 mx-auto py-14 items-center">
                          <div className="md:w-1/2">
-                              <img src={cyber_shopping} alt="Cyber Shopping Image" />
+                              <img src={cyber_shopping} alt="Cyber Shopping Image" loading="lazy" />
                          </div>
 
                          <div className="p-10 md:w-1/2">
