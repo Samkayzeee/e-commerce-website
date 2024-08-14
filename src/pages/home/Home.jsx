@@ -6,6 +6,7 @@ import Few_Products from "../../components/few_products/Few_Products";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeProvider";
+import FeaturedProducts from "../../components/6_products/FeaturedProducts";
 
 
 const collections = [
@@ -104,9 +105,9 @@ const HomePage = () => {
 
                      {/* sixth section */}
                     <div>
-                        <h2>Featured Products</h2>
+                        <h2 className="text-center py-10 text-2xl font-medium">Featured Products</h2>
                         <div>
-                            
+                            <FeaturedProducts />
                         </div>
                     </div>
 

@@ -67,7 +67,7 @@ const Navbar = () => {
   </div>
 </nav> */}
 
-<div className={`navbar sticky top-0 ${context.theme === 'light' ? 'bg-gray-500/30 text-black' : 'bg-black/30 text-white'} backdrop-blur-xl z-10`}>
+<div className={`navbar sticky top-0 ${context.theme === 'light' ? 'bg-gray-500/30 text-black' : 'bg-black/30 text-white'} backdrop-blur-xl z-20`}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
