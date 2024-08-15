@@ -6,7 +6,7 @@ import Few_Products from "../../components/few_products/Few_Products";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeProvider";
-import FeaturedProducts from "../../components/6_products/FeaturedProducts";
+import FeaturedProducts from "../../components/featuredproducts/FeaturedProducts";
 
 
 const collections = [
@@ -54,14 +54,14 @@ const HomePage = () => {
 
                 {/* second section */}
 
-                <div className="flex justify-center py-20">
-                    <div className="w-2/5 h-96">
-                        <img src={cloth} alt="cloth pic" className="h-full"/>
+                <div className="md:flex justify-center py-20">
+                    <div className="md:w-2/5 h-96">
+                        <img src={cloth} alt="cloth pic" className="h-full md:mx-0 mx-auto "/>
                     </div>
 
-                    <div className="w-2/5 self-center">
-                        <h2 className="text-6xl font-extrabold leading-[75px]">Finding Your <br />Perfect Product</h2>
-                        <p className="my-6 w-4/5 leading-6 text-lg font-medium">
+                    <div className="md:w-2/5 self-center p-14 md:p-0">
+                        <h2 className="md:text-6xl text-5xl font-extrabold md:leading-[75px]">Finding Your <br />Perfect Product</h2>
+                        <p className="my-6 md:w-4/5 leading-6 text-lg font-medium">
                             Explore a curated selection of products that perfectly complements your style. Find the ideal pieces to elevate your look for any occasion.
                         </p>
 
@@ -80,12 +80,12 @@ const HomePage = () => {
 
 
                 {/* fifth section */}
-                    <div className="flex justify-between p-24 border-y border-y-gray-400">
+                    <div className="flex justify-between md:flex-row flex-col md:p-24 p-6 border-y border-y-gray-400">
                         {
                             collections.map((collection, index) => {
                                 return(
                                     <div key={index}
-                                    className="w-[30%] h-[400px] p-6 flex items-end cursor-pointer transition-all duration-150 ease-in-out hover:scale-105"
+                                    className="md:w-[30%] w-4/5 mx-auto md:mx-0 md:my-0 my-6 h-[400px] p-6 flex items-end cursor-pointer transition-all duration-150 ease-in-out hover:scale-105"
                                     style={{
                                         background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url(${collection.img_url})`,
                                         backgroundPosition: "center",

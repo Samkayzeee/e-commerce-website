@@ -89,20 +89,20 @@ const ViewProductsPage = () => {
     const ShowProduct = () => {
         return(
             <>
-                <div className="main-viewproduct" style={{color: context.theme === 'light' ? null : '#FFF'}}>
+                <div className="main-viewproduct bg-gray-50 py-4" style={{color: context.theme === 'light' ? 'black' : '#FFF'}}>
                     <div className="product-img">
                         <img src={product.image} alt="" />
                     </div>
 
                     <div className="details">
-                        <h4 className="category">{product.category}</h4>
+                        <h4 className="category font-bold">{product.category}</h4>
                         <h1 className="title">{product.title}</h1>
-                        <p className="rating">rating {product.rating && product.rating.rate} <i className="fa-solid fa-star"></i></p> 
+                        <p className="rating">rating {product.rating && product.rating.rate} <i className="fa-solid fa-star translate-y-1 ms-0.5"></i></p>
                         <h3 className="price">$ {product.price}</h3>
                         <p className="desc">
                             {product.description}
                         </p>
-                        <div className="btns">
+                        <div className="btns my-4">
                             <button className="btn btn-dark" onClick={addToCart}>Add to Cart</button>
                             <Link className={`ms-2 ${context.theme === 'light' ? "btn btn-outline-dark" : "btn btn-outline-light"}`} to={'/cart'}>Go to Cart</Link>
                         </div>

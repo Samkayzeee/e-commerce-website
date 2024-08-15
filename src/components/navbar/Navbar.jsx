@@ -67,7 +67,7 @@ const Navbar = () => {
   </div>
 </nav> */}
 
-<div className={`navbar sticky top-0 ${context.theme === 'light' ? 'bg-gray-500/30 text-black' : 'bg-black/30 text-white'} backdrop-blur-xl z-20`}>
+<div className={`navbar sticky top-0 ${context.theme === 'light' ? 'bg-gray-500/30 text-black' : 'bg-black/30 text-white'} backdrop-blur-xl z-50`}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -88,19 +88,19 @@ const Navbar = () => {
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li>
-          <NavLink exact='true' className="text-base font-bold" aria-current="page" to={'/'} style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Home</NavLink>
+          <NavLink exact='true' className={`text-base font-bold ${context.theme === 'light' ? 'text-gray-400' : 'text-white'}`} aria-current="page" to={'/'} >Home</NavLink>
         </li>
 
         <li> 
-          <NavLink to={'/products'} className="text-base font-bold" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Products</NavLink> 
+          <NavLink to={'/products'} className={`text-base font-bold ${context.theme === 'light' ? 'text-gray-400' : 'text-white'}`} >Products</NavLink> 
         </li>
 
         <li>
-          <NavLink to={'/about'} className="text-base font-bold" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >About</NavLink>
+          <NavLink to={'/about'} className={`text-base font-bold ${context.theme === 'light' ? 'text-gray-400' : 'text-white'}`} >About</NavLink>
         </li>
 
         <li>
-          <NavLink to={'/contact'} className="text-base font-bold" style={({isActive}) => ({transform: isActive ? 'translateY(-5px)' : null, color: context.theme === 'light' ? 'black' : 'white'})} >Contacts</NavLink>
+          <NavLink to={'/contact'} className={`text-base font-bold ${context.theme === 'light' ? 'text-gray-400' : 'text-white'}`} >Contacts</NavLink>
         </li>
 
       </ul>
@@ -153,7 +153,7 @@ const Navbar = () => {
         className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
         <div className="card-body">
           {
-            cartLength.length === 0 ? <span className="text-sm font-semibold text-white"> No Items Available. </span> : <span className="text-lg font-bold">{cartLength.length} Items</span>
+            cartLength.length === 0 ? <span className="text-sm font-semibold text-white"> No Items Available. </span> : <span className="text-lg font-bold">{cartLength.length} Item </span>
           }
           {/* <span className="text-info">Subtotal: $999</span> */}
           <div className="card-actions">
