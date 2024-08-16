@@ -87,7 +87,7 @@ const FeaturedProducts = () => {
 
                                     <div className="card-actions justify-end items-center">
                                         <h2 className="font-bold"> {products.price} $ </h2>
-                                        <Link to={`/products/${products.id}`} className="btn btn-primary">Buy Now</Link>
+                                        <Link to={`/products/${products.id}`} className="btn border-0 bg-orange-800 transition-all ease-in-out duration-150 hover:bg-orange-900">Buy Now</Link>
                                     </div>
                                 </div>
                             </div>

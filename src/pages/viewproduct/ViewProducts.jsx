@@ -89,7 +89,7 @@ const ViewProductsPage = () => {
     const ShowProduct = () => {
         return(
             <>
-                <div className="main-viewproduct bg-gray-50 py-4" style={{color: context.theme === 'light' ? 'black' : '#FFF'}}>
+                <div className="main-viewproduct py-4" style={{color: context.theme === 'light' ? 'black' : '#FFF'}}>
                     <div className="product-img">
                         <img src={product.image} alt="" />
                     </div>
@@ -114,7 +114,7 @@ const ViewProductsPage = () => {
     return ( 
         <>
         <DefaultLayout>
-            <div className="viewproduct-container">
+            <div className={`viewproduct-container ${context.theme === 'light' ? 'bg-gray-50 text-black' : 'bg-black text-white'} px-2`}>
                     {
                         loading? <Loading /> : <ShowProduct />
                     }

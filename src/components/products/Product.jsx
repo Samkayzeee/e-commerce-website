@@ -1,9 +1,7 @@
-import './Product.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
-import { Icon } from '@iconify/react';
 import { ThemeContext } from '../../contexts/ThemeProvider';
 import { useContext } from 'react';
 

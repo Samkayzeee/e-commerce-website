@@ -6,9 +6,17 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 
+import { useForm } from "@formspree/react";
+
+
 import Phone_Holding from "/assets/Phone_Hold.jpg";
 
 const ContactPage = () => {
+
+
+    const [state, handleSubmit] = useForm("mzzpdzdq");
+
+
     // ref
     const formRef = useRef(null);
     const EmailRef = useRef(null);
@@ -113,7 +121,7 @@ const ContactPage = () => {
                     </div>
 
                     <div className="md:w-1/2 w-full py-8 px-6">
-                        <form action="">
+                        <form action="" onSubmit={handleSubmit}>
                             <div className="md:flex justify-between my-4">
                                 <div className="md:w-5/12 w-full my-4 md:my-0">
                                     <label htmlFor="FullName" className="block mb-4 text-red-700 text-sm">FULL NAME</label>
@@ -122,7 +130,10 @@ const ContactPage = () => {
 
                                 <div className="my-4 md:my-0 md:w-5/12 w-full">
                                     <label htmlFor="Email" className="block mb-4 text-red-700 text-sm">EMAIL ADDRESS</label>
-                                    <input type="email" name="Email" required className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Email"/>
+                                    <input type="email" name="Email" required className="bg-transparent text-sm border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700 w-full" placeholder="Email" 
+                                    ref={EmailRef} onBlur={validEMail} disabled={state.succeeded ? true : false}
+                                    />
+                                    {!isEmailValid && <p className="text-xs text-red-500">Please enter a valid email address</p>}
                                 </div>
                             </div>
 
@@ -134,9 +145,12 @@ const ContactPage = () => {
                             <div className="my-4">
                                 <label htmlFor="Textarea" className="block mb-4 text-red-700 text-sm">MESSAGE</label>
                                 <textarea name="" id="" cols="30" rows="3" required className="w-full resize-none text-sm bg-transparent border-b border-b-gray-500 py-3 outline-none focus:border-b-red-700" placeholder="Message"></textarea>
+                                { state.succeeded && <p className="text-xs text-green-600"> Message sent Successfully. </p>}
+                                { state.errors && <p className="text-xs text-red-500" > Email not send check your connection or check your fields and try again </p> }
                             </div>
 
-                            <button className="py-2.5 rounded-md text-white font-semibold px-4 bg-red-700"> Send Message </button>
+                            <button className=" w-36 py-2.5 text-center rounded-md text-white font-semibold bg-red-700" disabled={state.succeeded ? true : false}> { state.submitting ? <span className="loading loading-spinner loading-xs"></span> : "Send Message" } </button>
+
                             
                         </form>
                     </div>
