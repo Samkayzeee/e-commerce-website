@@ -68,13 +68,13 @@ const FeaturedProducts = () => {
 
     const Featured = () => {
         return(
-            <div className="py-4 px-16">
+            <div className="py-4 md:px-16">
         
             <div className="md:grid md:grid-cols-2 lg:grid-cols-3 flex flex-col">
             {
                 data.slice(0, 6).map(products => {
                     return(
-                            <div className="card bg-base-100 image-full md:w-3/4 mx-auto shadow-xl my-4 h-96" key={products.id}>
+                            <div className="card bg-base-100 image-full md:w-3/4 w-11/12 mx-auto shadow-xl my-4 h-96" key={products.id}>
                                 <figure className="w-full h-full">
                                     <img
                                     src={products.image}
@@ -97,7 +97,7 @@ const FeaturedProducts = () => {
             </div>
 
             <div className="flex justify-center my-6 text-white">
-                <Link className="inline-block border border-solid py-3 px-10 rounded-lg bg-orange-800 transition-all ease-in-out duration-150 hover:bg-orange-900" to={'/products'}>View All Products <i className='bx bx-right-arrow-alt translate-y-0.5'></i> </Link>
+                <Link className="inline-block border border-solid py-3 md:px-10 px-6 rounded-lg bg-orange-800 transition-all ease-in-out duration-150 hover:bg-orange-900" to={'/products'}>View All Products <i className='bx bx-right-arrow-alt translate-y-0.5'></i> </Link>
             </div>
 
         </div>

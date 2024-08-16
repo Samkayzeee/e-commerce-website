@@ -125,7 +125,7 @@ const Product = () => {
             // </>
             <div className='py-4 px-10'>
                 <div className='flex justify-between items-center'>
-                    <h2>
+                    <h2 className='hidden md:block'>
                         Select Category of Products.
                     </h2>
 

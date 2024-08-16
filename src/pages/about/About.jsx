@@ -16,7 +16,7 @@ const AboutPage = () => {
                <main className={`${ context.theme === 'light' ? 'bg-gray-50 text-black':'bg-black text-white' } pb-14`} >
 
                {/* section 1 */}
-               <div className="h-96 flex items-end py-14" 
+               <div className="md:h-96 h-[450px] flex items-end py-14" 
                     style={{
                         background:"linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url('/assets/Phone_Hold.jpg')",
                         backgroundPosition: "center",
@@ -36,7 +36,7 @@ const AboutPage = () => {
                     <Support />
                     {/* section 3 */}
 
-                    <div className="md:flex w-4/5 mx-auto py-14 items-center">
+                    <div className="md:flex md:w-4/5 mx-auto py-14 items-center">
                          <div className="md:w-1/2">
                               <img src={cyber_shopping} alt="Cyber Shopping Image" loading="lazy" />
                          </div>
