@@ -42,7 +42,7 @@ const HomePage = () => {
                 }}
                 >
                     <div className="-rotate-6">
-                        <h2 className="text-7xl font-bold text-center text-white">Fashion <span className="text-slate-500">for</span> Every <br /> Moment.</h2>
+                        <h2 className="text-md:7xl text-4xl font-bold text-center text-white">Fashion <span className="text-slate-500">for</span> Every <br /> Moment.</h2>
                         <div className="flex justify-center my-6">
                             <Link to={'/products'} className="btn me-5 border border-white bg-orange-800 hover:border-white hover:bg-transparent">Shop Now</Link>
                             <Link to={'/about'} className="btn bg-transparent border border-white hover:bg-orange-800">Learn More</Link>
@@ -59,9 +59,9 @@ const HomePage = () => {
                         <img src={cloth} alt="cloth pic" className="h-full md:mx-0 mx-auto "/>
                     </div>
 
-                    <div className="md:w-2/5 self-center p-14 md:p-0">
-                        <h2 className="md:text-6xl text-5xl font-extrabold md:leading-[75px]">Finding Your <br />Perfect Product</h2>
-                        <p className="my-6 md:w-4/5 leading-6 text-lg font-medium">
+                    <div className="md:w-2/5 self-center p-10 md:p-0">
+                        <h2 className="md:text-6xl text-3xl font-extrabold md:leading-[75px]">Finding Your <br />Perfect Product</h2>
+                        <p className="my-6 md:w-4/5 w-full leading-6 text-lg font-medium">
                             Explore a curated selection of products that perfectly complements your style. Find the ideal pieces to elevate your look for any occasion.
                         </p>
 
@@ -85,7 +85,7 @@ const HomePage = () => {
                             collections.map((collection, index) => {
                                 return(
                                     <div key={index}
-                                    className="md:w-[30%] w-4/5 mx-auto md:mx-0 md:my-0 my-6 h-[400px] p-6 flex items-end cursor-pointer transition-all duration-150 ease-in-out hover:scale-105"
+                                    className="md:w-[30%] w-11/12 mx-auto md:mx-0 md:my-0 my-6 h-[400px] p-6 flex items-end cursor-pointer transition-all duration-150 ease-in-out hover:scale-105"
                                     style={{
                                         background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url(${collection.img_url})`,
                                         backgroundPosition: "center",

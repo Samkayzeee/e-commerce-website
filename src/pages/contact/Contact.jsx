@@ -72,7 +72,7 @@ const ContactPage = () => {
             <DefaultLayout>
                 <div className={`${ context.theme === 'light' ? 'bg-gray-50 text-black':'bg-black text-white' } pb-14`} >
                     {/* first section */}
-                    <div className="h-96 flex items-end py-14" 
+                    <div className="md:h-96 h-[450px] flex items-end py-14" 
                     style={{
                         background:"linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url('/assets/Phone_Hold.jpg')",
                         backgroundPosition: "center",

@@ -13,7 +13,8 @@ export default {
         "30percent": "30%"
       },
       height:{
-        100:"400px"
+        100:"400px",
+        450:"450px"
       }
     },
   },
