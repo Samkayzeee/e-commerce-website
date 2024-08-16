@@ -55,7 +55,7 @@ const Cart = () => {
                            <div className="img-details">
 
                            <div className="item-img">
-                              <img src={item.image} alt={item.title} />
+                              <img src={item.image} alt={`${item.title.substring(0, 15)}...`} />
                               <div className="remove">
                                  <i onClick={() => dispatch(handleCart.removeOneTime(item.id))} className="fa-solid fa-xmark fa-beat text-dark"></i>
                               </div>

@@ -42,7 +42,7 @@ const ViewProductsPage = () => {
     const Loading = () => {
         return(
             <>
-            <div className="viewproducts-loading">
+            <div className="viewproducts-loading  py-4">
                 <div className="img col-md-6">
                     <Skeleton height={450} width={"100%"}/>
                 </div>

@@ -1,14 +1,11 @@
-import './Loading.css';
+
 
 const Loading = () => {
     return ( 
-        <>
-           <div className="loading">
-                <div className="loadingio-spinner-eclipse-1hjaczvx3dy"><div className="ldio-gckd814k9uq">
-                <div></div>
-                </div></div>
-            </div>
-        </>
+        <div className='w-dvw h-dvh flex justify-center items-center'>
+            <span className="loading loading-bars loading-lg text-orange-800"></span>
+            <h2 className="font-semibold ms-2"> Loading... </h2>
+        </div>
      );
 }
  

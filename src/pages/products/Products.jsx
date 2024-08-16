@@ -1,11 +1,17 @@
 import Product from "../../components/products/Product";
 import DefaultLayout from "../../layouts/DefaultLayouts/DefaultLayout";
 
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeProvider";
+
 const ProductsPage = () => {
+
+    const context = useContext(ThemeContext);
+
     return ( 
         <DefaultLayout >
 
-            <main>
+            <main className={`${context.theme === 'light' ? 'bg-gray-50 text-black' : 'bg-black text-white'}`}>
                 {/* section 1 */}
                 <div className="h-96 flex items-end py-14" 
                     style={{
@@ -23,7 +29,7 @@ const ProductsPage = () => {
 
                     {/* section 2 */}
                     <div>
-                        
+                        <Product />
                     </div>
 
             </main>
