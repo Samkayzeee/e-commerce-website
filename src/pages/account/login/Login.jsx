@@ -44,7 +44,7 @@ const LoginPage = () => {
         }
     }
     return ( 
-        <div className="login-container">
+        <div className="login-container text-black">
                     <form action="" className="login-form" onSubmit={Login}>
                         <h3>Login to account</h3>
                         <p className="access">

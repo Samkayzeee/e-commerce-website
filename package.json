@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@paystack/inline-js": "^2.12.6",
     "@popperjs/core": "^2.11.6",
     "@reduxjs/toolkit": "^1.9.3",

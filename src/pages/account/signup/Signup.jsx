@@ -33,7 +33,7 @@ const SignupPage = () => {
  }
     return ( 
 
-            <div className="signup-container">
+            <div className="signup-container text-black">
                     <form action="" className="signup-form" onSubmit={register}>
                         <h3>Register new account</h3>
                         <p className="access">
