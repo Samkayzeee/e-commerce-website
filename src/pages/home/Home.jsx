@@ -42,7 +42,7 @@ const HomePage = () => {
                 }}
                 >
                     <div className="-rotate-6">
-                        <h2 className="text-md:7xl text-4xl font-bold text-center text-white">Fashion <span className="text-slate-500">for</span> Every <br /> Moment.</h2>
+                        <h2 className="md:text-7xl text-4xl font-bold text-center text-white">Fashion <span className="text-slate-500">for</span> Every <br /> Moment.</h2>
                         <div className="flex justify-center my-6">
                             <Link to={'/products'} className="btn me-5 border border-white bg-orange-800 hover:border-white hover:bg-transparent">Shop Now</Link>
                             <Link to={'/about'} className="btn bg-transparent border border-white hover:bg-orange-800">Learn More</Link>
