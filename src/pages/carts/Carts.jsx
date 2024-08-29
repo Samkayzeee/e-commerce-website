@@ -29,13 +29,14 @@ const Cart = () => {
       if (!token) {
          navigate('/login');
      }
+     console.log("texting");
     },[]);
 
     const EmptyCart = () => {
          return(
             <>
             <div className="empty-cart-div">
-               <div className={darkmodeContext.theme === 'light' ? "empty-cart" : "empty-cart cart-darkmode"}>
+               <div className={ `empty-cart` }>
                      <h1> Your Cart is empty.. </h1>
                      <h1> Go back to products page to shop some items..</h1>
                      <Link className={`btn ${darkmodeContext.theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'}`} to={'/products'}> Go to Products Page </Link>
@@ -47,51 +48,60 @@ const Cart = () => {
 
     const CartItems = () => {
       return(
-            <div className={darkmodeContext.theme === 'light'? "cart-items": "cart-items cart-darkmode"}>
+            <div className={`py-10`}>
                {
                   cart.map((item) => {
                      return(
-                        <div className={`item`} key={item.id}>
-                           <div className="img-details">
+                        <div className={`flex justify-between md:w-3/4 mx-auto bg-white rounded-lg p-4 text-black items-center my-6 border border-gray-300`} key={item.id}>
+                           <div className="img-details items-center">
 
-                           <div className="item-img">
-                              <img src={item.image} alt={`${item.title.substring(0, 15)}...`} />
-                              <div className="remove">
-                                 <i onClick={() => dispatch(handleCart.removeOneTime(item.id))} className="fa-solid fa-xmark fa-beat text-dark"></i>
-                              </div>
+                           <div className="w-48 h-44 border border-gray-300 rounded-lg">
+                              <img src={item.image} alt={`${item.title.substring(0, 15)}...`} className="w-full h-full rounded-lg" />
                            </div>
                            
-                           <div className="details">
-                           <h2>{item.title}</h2>
-                           <p>Unit Price: ${item.price}</p>
-
-                           <div className="qty">
-                              <span onClick={() => dispatch(handleCart.addCart(item))}><i className="fa-solid fa-plus"></i></span> 
-                              <span>{item.qty}</span> 
-                              <span onClick={() => dispatch(handleCart.removeCart(item.id))}><i className="fa-solid fa-minus"></i></span>
-                           </div>
-                           </div>
                            </div>
 
-                           <div className="total-price">
-                              <p>${Math.round(item.totalPrice)}</p>
+                           <div className="p-2">
+                           <h2 className="text-xl font-bold">{item.title.substring(0, 18).toUpperCase()}...</h2>
+                           {/* <p>Unit Price: ${item.price}</p> */}
+
+                           <p className="text-sm font-medium text-gray-600 my-2">
+                              { item.description.substring(0, 80) }...
+                           </p>
+
+                           <div className="w-max flex items-center">
+                              <span onClick={() => dispatch(handleCart.removeCart(item.id))} className="flex justify-center items-center bg-black w-8 h-8 rounded-full text-white cursor-pointer"><i className="fa-solid fa-minus"></i></span>
+                              <span className="mx-2 font-semibold">{item.qty}</span>
+                              <span onClick={() => dispatch(handleCart.addCart(item))} className={`flex justify-center items-center bg-black w-8 h-8 rounded-full text-white cursor-pointer ${item.qty === 10 ? "pointer-events-none cursor-not-allowed" : "pointer-events-auto"}`}><i className="fa-solid fa-plus"></i></span> 
+                              
+                           </div>
+                           </div>
+
+                           <div className="h-44 flex flex-col justify-between items-center w-[6%]">
+                              <h3 className="text-xl font-bold">${Math.round(item.totalPrice)}</h3>
+                              <div className="cursor-pointer">
+                                 <i onClick={() => dispatch(handleCart.removeOneTime(item.id))} className='bx bx-trash text-red-500 text-3xl'></i>
+                              </div>
                            </div>
                         </div>
                      )
                   })
                }
-               <div className="checkout">
-                  <div className="btn">
-                     <button onClick={() => {
+               <div className="flex md:flex-row flex-col-reverse justify-between py-10">
+                  <div>
+                     <button 
+                     // disabled
+                     className={`btn text-white md:mt-0 w-full md:w-fit mt-4`}
+                     onClick={() => {
                         context.setAmount(total);
                         navigate('/checkout');
-                        dispatch(handleCart.clearItem());
+                        // dispatch(handleCart.clearItem());
                      }}>Proceed to Checkout</button>
                   </div>
 
                   <div className="details">
                      <p>Products in Cart:  <span>{cart.length} items</span></p>
-                     <p>Total: <span>${Math.round(total)}</span></p>
+                     <p>Total: <span className="font-semibold ms-1.5"> ${Math.round(total)} </span></p>
                   </div>
                </div>
             </div>
@@ -100,7 +110,23 @@ const Cart = () => {
 
     return ( 
         <DefaultLayout>
-               <div className="cart">
+            <div className="md:h-96 h-[450px] flex items-end py-14"
+                  style={{
+                        background:"linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0, 0.4)), url('/assets/Phone_Hold.jpg')",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        backgroundAttachment: "fixed"
+                  }}
+                  >
+                        <div className="text-center w-full">
+                           <p className="text-neutral-400 text-base font-semibold"> HOME <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i> CART <i className='bx bx-chevron-right text-3xl translate-y-1.5'></i></p>
+                           <h1 className="text-white font-extrabold" style={{fontSize: "60px"}}> Carts </h1>
+                        </div>
+            </div>
+
+
+
+               <div className={` p-5 ${ darkmodeContext.theme === 'light' ? 'bg-gray-50 text-black' : 'bg-black text-white' }`}>
                   {
                      cart.length === 0 ? <EmptyCart /> : <CartItems />
                   }
