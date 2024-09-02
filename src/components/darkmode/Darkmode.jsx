@@ -17,10 +17,11 @@ const Darkmode = () => {
 
     return ( 
         <>
-            <div className='fixed left-5 bottom-5 text-orange-500'>
+            <div className='fixed left-5 bottom-5 text-orange-500 z-30'>
                 <label className="swap swap-rotate">
                     {/* this hidden checkbox controls the state */}
                     <input type="checkbox" onClick={toggleTheme} 
+                    readOnly
                     checked={context.theme === 'light' ? true : false}
                     />
 

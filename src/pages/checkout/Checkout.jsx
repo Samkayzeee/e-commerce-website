@@ -82,14 +82,14 @@ const Checkout = () => {
                             </div>
                 </div>
 
-                <div className='px-6 py-14 w-4/5 mx-auto'>
+                <div className='px-6 py-14 md:w-4/5 mx-auto'>
                 <form action="" onSubmit={pay} className='w-full'>
                     <h3 className={`text-2xl  font-semibold my-3`}>Billing Details.</h3>
 
-                        <div className='flex justify-between my-8'>
+                        <div className='md:flex justify-between my-8'>
                         {/* <input type="text" name="First_Name" id="firstname" placeholder='Your FirstName' onChange={(e) =>setFirstName(e.target.value)} required/> */}
 
-                        <label className="form-control w-2/5">
+                        <label className="form-control md:w-2/5">
                         <div className="label">
                             <span className={`label-text text-lg font-semibold ${darkmodeContext.theme === 'light' ? "text-black": "text-white"}`}>First Name.</span>
                         </div>
@@ -98,7 +98,7 @@ const Checkout = () => {
                         </label>
 
 
-                        <label className="form-control w-2/5">
+                        <label className="form-control md:w-2/5">
                         <div className="label">
                             <span className={`label-text text-lg font-semibold ${darkmodeContext.theme === 'light' ? "text-black": "text-white"}`}>Last Name.</span>
                         </div>
