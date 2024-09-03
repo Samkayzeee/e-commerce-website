@@ -55,32 +55,32 @@ const Cart = () => {
                         <div className={`flex justify-between md:w-3/4 mx-auto bg-white rounded-lg p-4 text-black items-center my-6 border border-gray-300`} key={item.id}>
                            <div className="img-details items-center">
 
-                           <div className="w-48 h-44 border border-gray-300 rounded-lg">
+                           <div className="md:w-48 md:h-44 w-20 h-20 border border-gray-300 rounded-lg">
                               <img src={item.image} alt={`${item.title.substring(0, 15)}...`} className="w-full h-full rounded-lg" />
                            </div>
                            
                            </div>
 
                            <div className="p-2">
-                           <h2 className="text-xl font-bold">{item.title.substring(0, 18).toUpperCase()}...</h2>
+                           <h2 className="md:text-xl text-sm font-bold">{item.title.substring(0, 18).toUpperCase()}...</h2>
                            {/* <p>Unit Price: ${item.price}</p> */}
 
-                           <p className="text-sm font-medium text-gray-600 my-2">
+                           <p className="md:text-sm text-xs font-medium text-gray-600 my-2">
                               { item.description.substring(0, 80) }...
                            </p>
 
                            <div className="w-max flex items-center">
-                              <span onClick={() => dispatch(handleCart.removeCart(item.id))} className="flex justify-center items-center bg-black w-8 h-8 rounded-full text-white cursor-pointer"><i className="fa-solid fa-minus"></i></span>
-                              <span className="mx-2 font-semibold">{item.qty}</span>
-                              <span onClick={() => dispatch(handleCart.addCart(item))} className={`flex justify-center items-center bg-black w-8 h-8 rounded-full text-white cursor-pointer ${item.qty === 10 ? "pointer-events-none cursor-not-allowed" : "pointer-events-auto"}`}><i className="fa-solid fa-plus"></i></span> 
+                              <span onClick={() => dispatch(handleCart.removeCart(item.id))} className="flex justify-center items-center bg-black md:w-8 md:h-8 w-6 h-6 rounded-full text-white cursor-pointer"><i className="fa-solid fa-minus md:text-lg text-sm"></i></span>
+                              <span className="mx-2 font-semibold text-sm md:text-lg">{item.qty}</span>
+                              <span onClick={() => dispatch(handleCart.addCart(item))} className={`flex justify-center items-center bg-black md:w-8 md:h-8 w-6 h-6 rounded-full text-white cursor-pointer ${item.qty === 10 ? "pointer-events-none cursor-not-allowed" : "pointer-events-auto"}`}><i className="fa-solid fa-plus"></i></span> 
                               
                            </div>
                            </div>
 
-                           <div className="h-44 flex flex-col justify-between items-center w-[6%]">
-                              <h3 className="text-xl font-bold">${Math.round(item.totalPrice)}</h3>
+                           <div className="md:h-44 h-32 flex flex-col justify-between items-center md:w-[6%] w-[3%] ">
+                              <h3 className="md:text-xl text-sm font-bold">${Math.round(item.totalPrice)}</h3>
                               <div className="cursor-pointer">
-                                 <i onClick={() => dispatch(handleCart.removeOneTime(item.id))} className='bx bx-trash text-red-500 text-3xl'></i>
+                                 <i onClick={() => dispatch(handleCart.removeOneTime(item.id))} className='bx bx-trash text-red-500 md:text-3xl text-2xl'></i>
                               </div>
                            </div>
                         </div>

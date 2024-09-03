@@ -11,7 +11,8 @@ export default {
       },
       width:{
         "30percent": "30%",
-        "CartDel%": "6%"
+        "CartDel%": "6%",
+        "responsivecartdel":"3%"
       },
       height:{
         100:"400px",
