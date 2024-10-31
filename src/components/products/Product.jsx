@@ -150,7 +150,7 @@ const Product = () => {
                     {
                         filter.map((product) => {
                             return(
-                                <div className="card bg-white md:w-11/12 shadow-xl mx-auto border border-orange-800 my-4 text-black" key={product.id}>
+                                <div className={`card ${context.theme === 'light' ? "bg-white text-black":"bg-gray-900 text-gray-200"} md:w-11/12 shadow-xl mx-auto border border-orange-800 my-4`} key={product.id}>
                                     <figure className="w-full h-64 cursor-pointer">
                                         <img
                                         src={product.image}
