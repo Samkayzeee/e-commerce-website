@@ -86,7 +86,7 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 p-2 shadow w-96">
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 p-2 shadow w-[95dvw]">
         <li>
           <NavLink exact='true' className={`text-base font-bold ${context.theme === 'light' ? 'text-gray-400' : 'text-white'}`} aria-current="page" to={'/'} >Home</NavLink>
         </li>
