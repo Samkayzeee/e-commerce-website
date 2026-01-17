@@ -29,7 +29,6 @@ const Cart = () => {
       if (!token) {
          navigate('/login');
      }
-     console.log("texting");
     },[]);
 
     const EmptyCart = () => {
