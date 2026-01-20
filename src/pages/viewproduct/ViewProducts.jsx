@@ -9,6 +9,7 @@ import { handleCart } from "../../redux/handleCart";
 import Skeleton from "react-loading-skeleton";
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeProvider";
+import { toast } from "react-toastify";
 
 
 
@@ -67,6 +68,10 @@ const ViewProductsPage = () => {
 
     const addToCart = () => {
         dispatch(handleCart.addCart(product));
+       toast.success(`Item Added to the cart successfully`, {
+                position: "bottom-right"
+        });
+
         // const FetchCart = localStorage.getItem('cart');
 
         // if (FetchCart === null) {
