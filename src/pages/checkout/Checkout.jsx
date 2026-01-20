@@ -8,6 +8,7 @@ import './Checkout.css';
 import { useDispatch } from 'react-redux';
 import { handleCart } from '../../redux/handleCart';
 import { ThemeContext } from '../../contexts/ThemeProvider';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Checkout = () => {
     const context = useContext(PaymentAmountContext);
@@ -44,7 +45,9 @@ const Checkout = () => {
                 let message = `Your Payment is Completed! Reference ${transaction.reference}`;
                 dispatch(handleCart.clearItem());
                 status_ref.style.color = "green";
-                setStatus(message);
+                toast.success(`${message} Payment Successful! Redirecting to Home Page...`, {
+                    position: "bottom-right"
+                });
 
                 setTimeout(() => {
                     navigate('/');
@@ -53,8 +56,10 @@ const Checkout = () => {
 
             onCancel(){
                 status_ref.style.color = "red";
-                setStatus('Your Transaction has been cancelled');
-                // alert("");
+                toast.error(`Transaction Cancelled! Redirecting to Cart Page...`, {
+                    position: "bottom-right"
+                });
+                // setStatus('Your Transaction has been cancelled');
 
                 setTimeout(() => {
                     navigate('/cart');
@@ -64,6 +69,8 @@ const Checkout = () => {
         })
 
     }
+
+    const fmt = (v) => (Number(v) || 0).toLocaleString("en-NG");
 
     return ( 
         <>
@@ -124,7 +131,7 @@ const Checkout = () => {
                         <div className='my-10'>
 
                             <input className='px-4 py-3.5 w-full outline-none bg-transparent border-b border-orange-700 font-semibold' 
-                            type="text" name="amount" id="amount" defaultValue={`NGN ${amount}`} required disabled/>
+                            type="text" name="amount" id="amount" defaultValue={`NGN ${fmt(amount)}`} required disabled/>
                             {/* <input type="text" name="amount" id="amount"  defaultValue={`NGN ${amount}`} required disabled/> */}
                         </div>
 
@@ -133,6 +140,9 @@ const Checkout = () => {
                     <button className='btn'>Make Payment</button>
                 </form>
                 </div>
+            </div>
+            <div className="text-sm font-bold">
+                <ToastContainer />
             </div>
         </>
      );
